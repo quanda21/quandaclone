@@ -1,0 +1,195 @@
+<template>
+    <!-- Hero Section -->
+     <section
+       class="w-full h-100 bg-cover bg-center text-white flex items-center justify-center"
+       style="background-image: url('./src/assets/images/banner-bg.jpg');" >
+
+       <div class="container mx-auto flex justify-between items-center py-4 px-4 fixed top-0  z-10">
+      <div class="logo">
+        <router-link to="/">
+          <img
+            src="@/assets/images/logo.png"
+            alt="VP Media"
+            class="transition-transform duration-300"
+          />
+        </router-link>
+       </div>
+                 <!--  Bar -->
+                 <nav class="hidden md:flex justify-center items-center">
+    <ul class="flex space-x-6 list-none">
+      <li>
+        <router-link to="/" class="no-underline text-white hover:text-blue-500">Trang chủ</router-link>
+      </li>
+      <li>
+        <router-link to="/ve-chung-toi" class="no-underline text-white hover:text-blue-500">Về chúng tôi</router-link>
+      </li>
+      <li class="relative group">
+        <router-link to="/dich-vu" class="no-underline text-white hover:text-blue-500">
+          Dịch vụ
+          <span class="ml-1"></span>
+        </router-link>
+        <ul class="absolute hidden group-hover:block bg-white shadow-md mt-1 rounded w-80 text-left z-10">
+
+              <li>
+                <router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Tin nhắn SMS
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/dich-vu/cuoc-goi-thuong-hieu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Cuộc gọi thương hiệu
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/dichvu/value-added" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Dịch vụ GTGT
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/dichvu/app-development" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Phát triển ứng dụng và games
+                </router-link>
+              </li>
+              <li>
+                <router-link to="/dichvu/system-operation" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                  Vận hành hệ thống
+                </router-link>
+              </li>
+            </ul>
+      </li>
+      <li class="relative group">
+  <a href="#" class="nav-link text-white hover:text-blue-400 flex items-center gap-1">
+    Giải pháp 
+    <i class="fas fa-chevron-down text-xs mt-0.5"></i>
+  </a>
+  <!-- Dropdown menu -->
+  <ul class="absolute left-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg rounded w-56 z-50">
+    <li>
+      <a href="/giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Tổng đài VoIP
+      </a>
+    </li>
+    <li>
+      <a href="/giai-phat-tttn" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Tổng đài tin nhắn
+      </a>
+    </li>
+    <li>
+      <a href="/giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+        Thư điện tử
+      </a>
+    </li>
+  </ul>
+</li>
+      <li>
+        <router-link to="/lien-he" class="no-underline text-white hover:text-blue-500">Tuyển dụng</router-link>
+      </li>
+      <li>
+        <router-link to="/lien-he" class="no-underline text-white hover:text-blue-500">Liên hệ</router-link>
+      </li>
+    </ul>
+  </nav>
+
+      <button class="bg-blue-600 text-white  py-2 rounded hover:bg-blue-700">
+        Hotline : +84(0) 902 825 586
+      </button>
+    </div>
+
+
+     
+
+
+
+
+       <div class="text-center">
+         <h1 class="text-4xl font-bold mb-4">DỊCH VỤ</h1>
+         <div class="flex justify-center items-center mt-4"> 
+           <RouterLink to="/" class="text-white text-lg hover:text-gray-300">Trang chủ</RouterLink>
+         <p class="text-lg">  •Dịch vụ</p>
+         </div>
+         
+       </div>
+     </section>
+ 
+     <!-- Content Section -->
+     <section class="py-16 bg-white">
+       <div class="container mx-auto px-4">
+         <h2 class="text-4xl font-bold text-center text-blue-900 mb-8"></h2>
+         <p class="text-lg text-gray-600 leading-relaxed mb-8">
+           
+         </p>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+ <div class="md:col-span-2">
+   <h3 class="text-2xl font-bold text-black mb-4">Giải Pháp Tổng Đài VoIP – Nâng Cao Hiệu Quả Giao Tiếp</h3>
+   <p class="text-gray-600">
+    VPMEDIA cung cấp giải pháp tin nhắn SMS chuyên nghiệp, giúp doanh nghiệp dễ dàng tiếp cận khách hàng thông qua các kênh giao tiếp nhanh chóng và hiệu quả. Chúng tôi kết nối trực tiếp với các nhà mạng để đảm bảo tốc độ gửi tin nhanh, chính xác và chi phí tối ưu cho doanh nghiệp.
+   </p>
+
+   <h3 class="text-xl font-bold text-black mb-4 mt-10">Giới Thiệu Giải Pháp
+
+   </h3>
+   <p class="text-gray-600">
+    VPMEDIA là đối tác chính thức của các nhà mạng lớn tại Việt Nam, giúp doanh nghiệp gửi tin nhắn với tốc độ cao và đảm bảo tỷ lệ gửi thành công tối đa. Nhờ kết nối trực tiếp, tin nhắn của bạn sẽ được gửi đi ngay lập tức, không bị chậm trễ hay thất lạc.    </p>
+  
+   <h3 class="text-xl font-bold text-black mb-4 mt-10">Chất Lượng Âm Thanh Vượt Trội
+
+   </h3>
+   <p class="text-gray-600">
+    Dịch vụ SMS của chúng tôi được ứng dụng rộng rãi trong nhiều lĩnh vực khác nhau như tài chính, ngân hàng, thương mại điện tử, dịch vụ chăm sóc khách hàng, giáo dục và các tổ chức doanh nghiệp. Với hệ thống API linh hoạt, dễ dàng tích hợp vào nền tảng hiện có, doanh nghiệp có thể tự động hóa việc gửi tin nhắn và tối ưu quy trình vận hành.
+   </p>
+
+   <h3 class="text-xl font-bold text-black mb-4 mt-10">Dễ Dàng Tích Hợp Và Mở Rộng
+
+    </h3>
+    <p class="text-gray-600">
+        Việc sử dụng dịch vụ SMS của VPMEDIA giúp doanh nghiệp tiết kiệm chi phí, tăng hiệu quả truyền thông và nâng cao trải nghiệm khách hàng. Tin nhắn SMS có tỷ lệ mở cao, giúp doanh nghiệp tiếp cận khách hàng ngay lập tức mà không cần phụ thuộc vào kết nối Internet. Ngoài ra, hệ thống của chúng tôi hỗ trợ báo cáo chi tiết, giúp doanh nghiệp dễ dàng theo dõi hiệu quả chiến dịch và tối ưu chiến lược marketing.    </p>
+
+        <h3 class="text-xl font-bold text-black mb-4 mt-10">Bảo Mật Cao, Đảm Bảo An Toàn Dữ Liệu
+
+</h3>
+<p class="text-gray-600">
+    Việc sử dụng dịch vụ SMS của VPMEDIA giúp doanh nghiệp tiết kiệm chi phí, tăng hiệu quả truyền thông và nâng cao trải nghiệm khách hàng. Tin nhắn SMS có tỷ lệ mở cao, giúp doanh nghiệp tiếp cận khách hàng ngay lập tức mà không cần phụ thuộc vào kết nối Internet. Ngoài ra, hệ thống của chúng tôi hỗ trợ báo cáo chi tiết, giúp doanh nghiệp dễ dàng theo dõi hiệu quả chiến dịch và tối ưu chiến lược marketing.    </p>
+
+
+ </div>
+
+ <!-- <div class="relative bg-gray-100 p-4 rounded shadow-md w-full md:w-1/3">
+  <h3 class="text-lg font-bold text-black mb-4 border-b-2 border-blue-900 pb-2">Dịch Vụ</h3>
+  <div class="flex flex-col space-y-4"></div> -->
+
+
+ <!-- button -->
+ <div class="relative g-gray-100 p-4 rounded shadow-md  ">
+    <h3 class="text-lg font-bold text-black mb-4 border-b-2 border-blue-900 pb-2">Giải Pháp</h3>
+
+  <div class="flex flex-col space-y-4">
+    <RouterLink
+      to="/Giai-phap"
+      class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 text-center"
+    >
+      Tổng đài VoIP
+    </RouterLink>
+    <RouterLink
+      to="/Giai-phat-tttn"
+      class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 text-center"
+    >
+      Tổng đài tin nhắn
+    </RouterLink>
+    <RouterLink
+      to="/Giai-phap"
+      class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 text-center"
+    >
+        Thư điện tử
+    </RouterLink>
+   
+  
+</div>
+   
+ </div>
+</div>
+
+       </div>
+     </section>
+
+ </template>
