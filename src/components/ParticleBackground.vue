@@ -1,32 +1,38 @@
 <template>
     <div class="particle-background">
-
-  <canvas ref="canvas" class="fixed absolute  w-100% h-100% -z-10"></canvas>
+        <canvas ref="canvas" class="absolute w-full h-full top-0"></canvas>
     </div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, onUnmounted } from 'vue'
+
 
 const canvas = ref(null)
 
 onMounted(() => {
   const ctx = canvas.value.getContext('2d')
-  canvas.value.width = window.innerWidth
-  canvas.value.height = window.innerHeight
+  const section = canvas.value.parentElement.parentElement // Lấy <section>
+  
+  // Đặt kích thước canvas theo <section>
+  const resizeCanvas = () => {
+    canvas.value.width = section.offsetWidth
+    canvas.value.height = section.offsetHeight
+  }
+  resizeCanvas()
 
-  const PARTICLE_COUNT = 200  // nhiều hơn
+  const PARTICLE_COUNT = 200
   const particles = []
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
     particles.push({
       x: Math.random() * canvas.value.width,
       y: Math.random() * canvas.value.height,
-      radius: Math.random() * 2.5 + 1.5, // từ 1.5 đến 4px
-      dx: (Math.random() - 0.5) * 0.4,
-      dy: (Math.random() - 0.5) * 0.4,
-      opacity: Math.random() * 0.5 + 0.6, // từ 0.6 đến 1.1
-      color: Math.random() > 0.7 ? '#ffffff' : '#cdeaff' // vài hạt xanh nhẹ
+      radius: Math.random() * 2.0 + 1.0,
+      dx: (Math.random() - 0.5) * 2.0,
+      dy: (Math.random() - 0.5) * 2.0,
+      opacity: Math.random() * 0.3 + 0.3, 
+      color: Math.random() > 0.5 ? '#ffffff' : '#cdeaff'
     })
   }
 
@@ -42,7 +48,6 @@ onMounted(() => {
       p.x += p.dx
       p.y += p.dy
 
-      // nếu ra ngoài canvas thì quay lại
       if (p.x < 0 || p.x > canvas.value.width) p.dx *= -1
       if (p.y < 0 || p.y > canvas.value.height) p.dy *= -1
     })
@@ -52,12 +57,14 @@ onMounted(() => {
 
   draw()
 
-  window.addEventListener('resize', () => {
-    canvas.value.width = window.innerWidth
-    canvas.value.height = window.innerHeight
+  // Cập nhật kích thước khi cửa sổ thay đổi
+  window.addEventListener('resize', resizeCanvas)
+
+  // Dọn dẹp khi component bị hủy
+  onUnmounted(() => {
+    window.removeEventListener('resize', resizeCanvas)
   })
 
-  // chuyển mã hex sang rgba
   function hexToRgba(hex, opacity) {
     const bigint = parseInt(hex.replace('#', ''), 16)
     const r = (bigint >> 16) & 255

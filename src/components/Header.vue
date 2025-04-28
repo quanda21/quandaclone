@@ -14,13 +14,16 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll); // Gỡ bỏ sự kiện khi component bị hủy
 });
+
+
 </script>
 
 <template>
-    <header
-    v-show="isScrolled"
-    class="shadow-sm fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300"
-  >
+ <header
+  :class="['shadow-sm fixed top-0 left-0 w-full z-50 bg-white transition-all duration-500', 
+     { 'slide-in': isScrolled, 'slide-out': !isScrolled }]"
+>
+
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div class="logo">
         <router-link to="/">
@@ -31,6 +34,9 @@ onUnmounted(() => {
           />
         </router-link>
       </div>
+       
+      
+
 
       <el-menu mode="horizontal" :ellipsis="false" class="hidden md:flex">
         <el-menu-item index="1">
@@ -56,7 +62,7 @@ onUnmounted(() => {
             <router-link to="/dich-vu-GTVT" class="no-underline text-gray-800">Phát triển ứng dụng và games</router-link>
           </el-menu-item>
           <el-menu-item index="3-5">
-            <router-link to="/dich-vu-GTVT" class="no-underline text-gray-800">Vận hành hệ thống</router-link>
+            <router-link to="/dich-vu-van-hanh" class="no-underline text-gray-800">Vận hành hệ thống</router-link>
           </el-menu-item>
         </el-sub-menu>
 
@@ -82,21 +88,48 @@ onUnmounted(() => {
           <router-link to="/lien-he" class="no-underline text-gray-800">Liên hệ</router-link>
         </el-menu-item>
       </el-menu>
-      <el-button type="primary" class="no-underline text-gray-800"> 
-        Hotline : +84(0) 902 825 586    
-      </el-button>
+      <el-button
+  class="relative overflow-hidden text-white px-6 py-6 rounded-lg transition-all duration-1000 border-2 border-transparent fill-effect"
+>
+  Hotline : +84(0) 902 825 586
+</el-button>
 
-      <div class="md:hidden">
-        <el-button type="primary" @click="isMenuOpen = !isMenuOpen">
-          <i class="i-ph-list-bold"></i>
-        </el-button>
-      </div>
-    </div>
+    </div> 
   </header>
 </template>
 
 <style scoped>
 header {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-100%);
+  opacity: 0;
 }
+
+/* Khi cuộn xuống, header sẽ trượt xuống */
+.slide-in {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* Khi cuộn lên, trượt lên trên */
+.slide-out {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.transition-all {
+  transition: all 0.4s ease-in-out;
+}
+
+.fill-effect {
+  background-color: #142b73; /* màu gốc */
+  --fill-color: #2563eb;     /* màu hover: xanh nhạt hơn */
+  box-shadow: inset 0 0 0 0 var(--fill-color);
+}
+
+.fill-effect:hover {
+  box-shadow: inset 0 0 0 100px var(--fill-color);
+  color: white !important;
+  transition: box-shadow 0.9s ease-in-out;
+}
+
 </style>

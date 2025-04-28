@@ -9,6 +9,9 @@ import router from './router'
 import { loadFull } from "tsparticles";
 import Particles from "@tsparticles/vue3"
 
+import i18n from './i18n.js' 
+
+
 
 
 const app = createApp(App)
@@ -21,6 +24,8 @@ const particlesInit = async (engine) => {
   
   app.use(Particles, { particlesInit });
  app.use(router)
+ app.use(i18n)
+
 app.mount('#app')
 
 

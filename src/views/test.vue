@@ -1,0 +1,190 @@
+<template>
+  <div class="container mx-auto flex justify-between py-16px px-30 fixed top-0 z-16 w-full left-1/2 -translate-x-1/2 h-auto">
+    <div class="logo">
+      <router-link to="/">
+        <img
+          src="@/assets/images/logo.png"
+          alt="VP Media"
+          class="transition-transform duration-300"
+        />
+      </router-link>
+    </div>
+    <ParticleBackground class= "z-10"/>
+
+    <nav class="hidden md:flex justify-center items-center text-slm  text-white   uppercase "  style="font-size: 16px;" >
+      <ul class="flex space-x-6 list-none    leading-tight  ">
+        <li> 
+          <router-link to="/" class="no-underline text-white font-600 ">{{ $t('home') }}</router-link>
+        </li>
+        <li>
+          <router-link to="/ve-chung-toi" class="no-underline text-white font-600 ">{{ $t('about') }}</router-link>
+        </li>
+        <li class="relative group ">
+          <router-link to="/dich-vu"  class="no-underline text-white font-600 ">
+            {{ $t('se') }} 
+            <el-icon><ArrowDown /></el-icon>
+          </router-link>
+          <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10 mt-16px">
+            <li>
+              <router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('sms') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/dichvu-cuoc-goi-thuong-hieu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('branded_calls') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('value_added_services') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('app_development') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('system_operations') }}</router-link>
+            </li>
+          </ul>
+        </li>
+        <li class="relative group">
+          <router-link to="/Giai-phap" class="no-underline text-white font-600 ">{{ $t('solutions') }}
+
+            <el-icon><ArrowDown /></el-icon>
+
+
+          </router-link>
+          <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10">
+            <li>
+              <router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('voip') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/Giai-phat-tttn" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('messaging') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('email') }}</router-link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <router-link to="/lien-he" class="no-underline text-white font-600 ">{{ $t('recruitment') }}</router-link>
+        </li>
+        <li>
+          <router-link to="/lien-he" class="no-underline text-white font-600 ">{{ $t('contact') }}</router-link>
+        </li>
+      </ul>
+    </nav>
+       <!-- <el-button class="bg-[#142b73] text-white  px-5 py-6 hover:bg-blue-700 transition duration-300  border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)]" >
+            
+                Hotline: +84(0) 902 825 586
+       </el-button> -->
+       <!-- hiệu ứng ripple khi hover vào button -->
+       <el-button
+    ref="button"
+    class="relative overflow-hidden bg-[#142b73] text-white px-5 py-6  hover:text-white transition duration-300 border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+    @mouseenter="startRipple"
+    @mousemove="updateRipple"
+    @mouseleave="clearRipple"
+  >
+    <span
+      v-if="ripple"
+      class="absolute bg-white/20 rounded-full pointer-events-none"
+      :style="rippleStyle"
+    ></span>
+    Hotline: +84(0) 902 825 586
+  </el-button>
+
+    <el-dropdown trigger="click" @command="changeLanguage">
+    <div class="flex items-center cursor-pointer text-white">
+      <el-icon><ChromeFilled /></el-icon>
+            <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
+      <el-icon class="ml-1"><ArrowDown /></el-icon>
+    </div>
+
+    <template #dropdown>
+      <el-dropdown-menu class="bg-dark text-white rounded-lg ">
+        <el-dropdown-item command="vi" class=" text-white">
+           Tiếng Việt
+        </el-dropdown-item>
+        <el-dropdown-item command="en">
+           Tiếng Anh
+        </el-dropdown-item>
+      </el-dropdown-menu>
+    </template>
+  </el-dropdown>
+  </div>
+
+  
+  
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+import { ChromeFilled, ArrowDown } from '@element-plus/icons-vue'
+
+
+const { locale } = useI18n();
+const currentLocale = ref(locale.value);
+
+function changeLanguage(value) {
+  locale.value = value;
+  currentLocale.value = value;
+}
+const ripple = ref(false)
+const rippleStyle = ref({})
+const buttonStyle = ref({ backgroundColor: '#142b73' })
+
+function startRipple(event) {
+  const button = event.currentTarget
+  const rect = button.getBoundingClientRect()
+  const size = Math.max(rect.width, rect.height) * 2  
+
+  ripple.value = true
+  rippleStyle.value = {
+    width: `${size}px`,
+    height: `${size}px`,
+    left: `${event.clientX - rect.left - size / 2}px`,
+    top: `${event.clientY - rect.top - size / 2}px`,
+    transform: 'scale(0)',
+    opacity: '0.7',
+    transition: 'transform 1s ease, opacity 2s ease',
+    position: 'absolute',
+    backgroundColor:' rgb(5 107 217)', // Màu nền của button
+  }
+  buttonStyle.value.backgroundColor = 'rgba(0, 0, 255, 0.7)'; // Màu rõ hơn khi ripple bắt đầu
+
+  // Khi hover vào, bắt đầu scale lớn ra
+  requestAnimationFrame(() => {
+    rippleStyle.value.transform = 'scale(4)'
+    rippleStyle.value.opacity = '0'
+  })
+}
+
+function updateRipple(event) {
+  if (!ripple.value) return
+
+  const button = event.currentTarget
+  const rect = button.getBoundingClientRect()
+  const size = Math.max(rect.width, rect.height) * 2
+
+  rippleStyle.value.left = `${event.clientX - rect.left - size / 2}px`
+  rippleStyle.value.top = `${event.clientY - rect.top - size / 2}px`
+}
+
+function clearRipple() {
+  ripple.value = false
+}
+
+
+</script>
+
+
+<style scoped>
+.bg-dark {
+  background-color: #96b2d8; /* màu tối */
+}
+
+
+:deep .el-button:hover{
+  
+  background-color:  rgb(5 107 217) ; /* màu sáng khi hover */
+  color: white; /* màu chữ khi hover */
+}
+</style>

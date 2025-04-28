@@ -1,0 +1,134 @@
+{
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "services1": "Dịch vụ",
+    "solutions": "Giải pháp",
+    "recruitment": "Tuyển dụng",
+    "contact": "Liên hệ",
+    "hotline": "SĐT hỗ trợ",
+    "sms": "Tin nhắn SMS",
+    "branded_calls": "Cuộc gọi thương hiệu",
+    "value_added_services": "Dịch vụ GTGT",
+    "app_development": "Phát triển ứng dụng và games",
+    "system_operations": "Vận hành hệ thống",
+    "voip": "Tổng đài VoIP",
+    "messaging": "Tổng đài tin nhắn",
+    "email": "Thư điện tử",
+
+
+  "it_solution_heading": "GIẢI PHÁP CNTT THÔNG MINH CHO DOANH NGHIỆP CỦA BẠN",
+  "it_solution_description": "Chúng tôi chuyên về nghiên cứu, xây dựng và phát triển các sản phẩm về công nghệ thông tin, viễn thông trên mạng Internet và mạng di động. Sứ mệnh của chúng tôi là mang đến những giải pháp tối ưu phù hợp với yêu cầu của từng khách hàng trên thị trường Công nghệ thông tin và Viễn thông.",
+  "se": "Dịch vụ",
+  "contact_us": "Liên hệ với chúng tôi",
+
+
+
+    "nd1": "About Us",
+
+    "about": "Về chúng tôi",
+    "about_description": "VPMEDIA là công ty hoạt động trong lĩnh vực viễn thông và CNTT được thành lập để trở thành doanh nghiệp hàng đầu trong lĩnh vực cung cấp dịch vụ gia tăng viễn thông trên Internet và di động tại Việt Nam. Khách hàng biết đến chúng tôi là nhà cung cấp các giải pháp phần mềm sáng tạo và đáng tin cậy cho thị trường Viễn thông trong nước cũng như vươn ra ngoài thế giới.",
+    "read_more": "Xem thêm",
+    "years_of_innovation": "Năm xây dựng và đổi mới",
+
+
+    "services": {
+      "providedTitle": "Những Gì Chúng Tôi Cung Cấp",
+      "mainTitle": "Dịch vụ của chúng tôi",
+      "details": "Chi tiết",
+      "systemOperation": {
+        "title": "Vận hành hệ thống",
+        "desc": "Cung cấp giải pháp quản lý, giám sát và tối ưu hóa hệ thống máy chủ, mạng và hạ tầng công nghệ thông tin. Đảm bảo hệ thống hoạt động ổn định, an toàn và hiệu quả."
+      },
+      "sms": {
+        "title": "Tin nhắn SMS",
+        "desc": "Dịch vụ SMS Brandname giúp doanh nghiệp gửi tin nhắn quảng cáo, chăm sóc khách hàng, OTP, thông báo giao dịch với độ tin cậy cao, tốc độ nhanh và chi phí hợp lý."
+      },
+      "voiceBrand": {
+        "title": "Cuộc gọi thương hiệu",
+        "desc": "Dịch vụ Voice Brandname cho phép doanh nghiệp thực hiện các cuộc gọi hiển thị tên thương hiệu, giúp tăng độ nhận diện, tin cậy và hiệu quả tiếp cận khách hàng."
+      },
+      "vas": {
+        "title": "Dịch vụ GTGT (Giá trị gia tăng)",
+        "desc": "Cung cấp các giải pháp gia tăng giá trị cho khách hàng như tổng đài ảo, USSD, dịch vụ nội dung số, đăng ký thuê bao tự động, hỗ trợ doanh nghiệp tiếp cận khách hàng hiệu quả hơn và nâng cao trải nghiệm người dùng."
+      },
+      "devGames": {
+        "title": "Phát triển ứng dụng và games",
+        "desc": "Dịch vụ thiết kế, lập trình và triển khai các ứng dụng di động, web, phần mềm tùy chỉnh theo nhu cầu doanh nghiệp. Ngoài ra, chúng tôi cũng phát triển game mobile và nền tảng tương tác trực tuyến."
+      },
+      "voip": {
+        "title": "Giải pháp tổng đài VoIP",
+        "desc": "Cung cấp và triển khai tổng đài IP (VoIP) giúp doanh nghiệp tối ưu chi phí, nâng cao hiệu suất và cải thiện trải nghiệm khách hàng. Hỗ trợ gọi nội bộ miễn phí, ghi âm, IVR, báo cáo chi tiết và tích hợp CRM."
+      }
+    },
+
+
+
+    "applications": {
+    "sectionTitle": "Ứng Dụng Chúng Tôi Đã Phát Triển",
+    "sectionSubtitle": "Chúng tôi tự hào giới thiệu các ứng dụng tiêu biểu.",
+    "apps": [
+      {
+        "title": "VBot - Tổng đài AI đa tính năng",
+        "description": "VBot là giải pháp tổng đài AI thông minh, giúp doanh nghiệp tự động hóa chăm sóc khách hàng, tối ưu quy trình giao tiếp và nâng cao trải nghiệm người dùng. Với công nghệ AI tiên tiến, VBot có thể xử lý cuộc gọi, phản hồi tin nhắn và hỗ trợ khách hàng 24/7.",
+        "features": [
+          "Tự động hóa tổng đài với AI, giảm thiểu chi phí vận hành",
+          "Hỗ trợ đa kênh: thoại, SMS, chatbot, tích hợp với CRM",
+          "Cung cấp báo cáo, phân tích dữ liệu và tối ưu hiệu suất tổng đài",
+          "SDK linh hoạt, dễ dàng tích hợp vào ứng dụng và hệ thống của doanh nghiệp"
+        ],
+        "titles": "Với khả năng linh hoạt, dễ dàng tùy chỉnh và tích hợp thông qua SDK mạnh mẽ, VBot là giải pháp hoàn hảo giúp doanh nghiệp nâng cao chất lượng dịch vụ khách hàng và tối ưu hiệu quả hoạt động."
+      },
+      {
+        "title": "VScan - Ứng dụng quét tài liệu",
+        "description": "VScan là ứng dụng quét tài liệu mạnh mẽ, giúp bạn chuyển đổi giấy tờ, hợp đồng, hóa đơn và nhiều loại tài liệu khác sang định dạng kỹ thuật số một cách nhanh chóng và chính xác. Với công nghệ nhận diện ký tự quang học (OCR) tiên tiến, VScan giúp bạn lưu trữ, tìm kiếm và chia sẻ tài liệu dễ dàng.",
+        "features": [
+          "Phân tích dữ liệu tài chính",
+          "Báo cáo chi tiết và trực quan",
+          "Tích hợp dễ dàng với hệ thống hiện tại"
+        ],
+        "titles": "Với VScan, bạn có thể số hóa tài liệu một cách tiện lợi, tiết kiệm thời gian và nâng cao hiệu suất làm việc."
+      },
+      {
+        "title": "Văn phòng điện tử",
+        "description": "VOffice là giải pháp văn phòng điện tử giúp doanh nghiệp số hóa quy trình làm việc, quản lý tài liệu, điều hành công việc và tối ưu hiệu suất làm việc. Với giao diện thân thiện và hệ thống thông minh, VOffice giúp kết nối nhân sự, giảm thiểu thủ tục giấy tờ và nâng cao hiệu quả quản lý.",
+        "features": [
+          "Quản lý tài liệu thông minh",
+          "Tích hợp lịch làm việc và nhắc nhở",
+          "Bảo mật dữ liệu cao"
+        ],
+        "titles": "Với VOffice, doanh nghiệp có thể hiện đại hóa mô hình làm việc, tiết kiệm thời gian và nâng cao năng suất lao động."
+      },
+      {
+        "title": "Golden Health",
+        "description": "Golden Health là ứng dụng chăm sóc sức khỏe cá nhân, giúp người dùng theo dõi và quản lý sức khỏe một cách hiệu quả. Với các tính năng thông minh, Golden Health hỗ trợ người dùng theo dõi nhịp tim, huyết áp, cân nặng và các chỉ số sức khỏe quan trọng khác.",
+        "features": [
+          "Theo dõi nhịp tim, huyết áp, cân nặng và các chỉ số sức khỏe quan trọng",
+          "Ghi chép nhật ký sức khỏe và quá trình điều trị",
+          "Nhắc nhở uống thuốc, lịch khám bệnh và tập luyện",
+          "Phân tích sức khỏe và đề xuất cải thiện thể trạng"
+        ],
+        "titles": "Với Golden Health, bạn có thể chủ động chăm sóc sức khỏe, xây dựng lối sống lành mạnh và phòng ngừa rủi ro bệnh tật."
+      }
+    ]
+  },
+    
+
+
+
+
+
+    "collaboration.title": "HỢP TÁC CÙNG CHÚNG TÔI?",
+    "collaboration.heading": "ỨNG DỤNG CÔNG NGHỆ ĐỂ NÂNG CAO TRẢI NGHIỆM",
+    "collaboration.description": "Chúng tôi tận dụng sức mạnh công nghệ để mang đến giải pháp tối ưu, giúp doanh nghiệp vận hành hiệu quả, bảo mật và linh hoạt hơn. Cùng nhau, chúng ta có thể tạo ra những giá trị bền vững và đột phá trong kỷ nguyên số.",
+    "collaboration.button": "Liên hệ với chúng tôi",
+
+
+        "clients": {
+            "trustedBy": "ĐƯỢC TIN TƯỞNG BỞI NHIỀU KHÁCH HÀNG",
+            "ourClients": "KHÁCH HÀNG CỦA CHÚNG TÔI"
+          }
+
+  }
+
+
+

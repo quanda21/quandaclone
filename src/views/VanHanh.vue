@@ -5,6 +5,7 @@
        style="background-image: url('./src/assets/images/banner-bg.jpg');" >
 
 
+
      
 
 
@@ -30,30 +31,36 @@
          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
  <div class="md:col-span-2">
-   <h3 class="text-2xl font-bold text-black mb-4">Dịch Vụ Tin Nhắn SMS – Giải Pháp Gửi Tin Hiệu Quả</h3>
+   <h3 class="text-2xl font-bold text-black mb-4">Vận Hành Hệ Thống – Đảm Bảo Ổn Định và Hiệu Suất Cao</h3>
    <p class="text-gray-600">
-    VPMEDIA cung cấp giải pháp tin nhắn SMS chuyên nghiệp, giúp doanh nghiệp dễ dàng tiếp cận khách hàng thông qua các kênh giao tiếp nhanh chóng và hiệu quả. Chúng tôi kết nối trực tiếp với các nhà mạng để đảm bảo tốc độ gửi tin nhanh, chính xác và chi phí tối ưu cho doanh nghiệp.
-   </p>
+    Trong môi trường công nghệ số hiện nay, việc đảm bảo hệ thống vận hành ổn định, bảo mật và hiệu quả là yếu tố then chốt giúp doanh nghiệp duy trì hoạt động liên tục và phát triển bền vững. VPMEDIA cung cấp dịch vụ vận hành hệ thống chuyên nghiệp, giúp khách hàng quản lý và tối ưu hạ tầng công nghệ, đảm bảo hiệu suất cao và giảm thiểu rủi ro gián đoạn.   </p>
 
-   <h3 class="text-xl font-bold text-black mb-4 mt-10">Kết Nối Trực Tiếp Với Nhà Mạng
+   <h3 class="text-xl font-bold text-black mb-4 mt-10">Giới Thiệu Dịch Vụ
    </h3>
    <p class="text-gray-600">
     VPMEDIA là đối tác chính thức của các nhà mạng lớn tại Việt Nam, giúp doanh nghiệp gửi tin nhắn với tốc độ cao và đảm bảo tỷ lệ gửi thành công tối đa. Nhờ kết nối trực tiếp, tin nhắn của bạn sẽ được gửi đi ngay lập tức, không bị chậm trễ hay thất lạc.    </p>
   
-   <h3 class="text-xl font-bold text-black mb-4 mt-10">Ứng Dụng Trong Doanh Nghiệp
-
+   <h3 class="text-xl font-bold text-black mb-4 mt-10">Giám Sát Hệ Thống
    </h3>
    <p class="text-gray-600">
     Dịch vụ SMS của chúng tôi được ứng dụng rộng rãi trong nhiều lĩnh vực khác nhau như tài chính, ngân hàng, thương mại điện tử, dịch vụ chăm sóc khách hàng, giáo dục và các tổ chức doanh nghiệp. Với hệ thống API linh hoạt, dễ dàng tích hợp vào nền tảng hiện có, doanh nghiệp có thể tự động hóa việc gửi tin nhắn và tối ưu quy trình vận hành.
    </p>
 
-   <h3 class="text-xl font-bold text-black mb-4 mt-10">Lợi Ích Khi Sử Dụng Dịch Vụ
+   <h3 class="text-xl font-bold text-black mb-4 mt-10">Bảo Mật và Sao Lưu Dữ Liệu
+
 
     </h3>
     <p class="text-gray-600">
         Việc sử dụng dịch vụ SMS của VPMEDIA giúp doanh nghiệp tiết kiệm chi phí, tăng hiệu quả truyền thông và nâng cao trải nghiệm khách hàng. Tin nhắn SMS có tỷ lệ mở cao, giúp doanh nghiệp tiếp cận khách hàng ngay lập tức mà không cần phụ thuộc vào kết nối Internet. Ngoài ra, hệ thống của chúng tôi hỗ trợ báo cáo chi tiết, giúp doanh nghiệp dễ dàng theo dõi hiệu quả chiến dịch và tối ưu chiến lược marketing.    </p>
 
+        
+   <h3 class="text-xl font-bold text-black mb-4 mt-10">Tối Ưu Hóa Hiệu Suất
 
+</h3>
+<p class="text-gray-600">
+    VPMEDIA giúp tối ưu hóa hiệu suất hệ thống bằng cách phân tích, cân bằng tải và điều chỉnh tài nguyên hợp lý. Chúng tôi áp dụng các công nghệ tiên tiến để đảm bảo hệ thống vận hành trơn tru, giảm độ trễ và nâng cao trải nghiệm người dùng.
+    
+</p>
  </div>
 
  <!-- <div class="relative bg-gray-100 p-4 rounded shadow-md w-full md:w-1/3">
@@ -85,13 +92,13 @@
       Dịch vụ GTGT
     </RouterLink>
     <RouterLink
-      to="/dich-vu-GTVT"
+      to="/dich-vu"
       class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 text-center"
     >
       Phát triển ứng dụng và games
     </RouterLink>
     <RouterLink
-      to="/dich-vu-GTVT"
+      to="/dich-vu-van-hanh"
       class="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-700 text-center"
     >
       Vận hành hệ thống

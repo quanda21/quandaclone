@@ -32,6 +32,11 @@ const routes = [
   component: () => import('../views/GTVT.vue')
 },
 {
+  path: '/dich-vu-van-hanh',
+  name: 'VanHanh',
+  component: () => import('../views/VanHanh.vue')
+},
+{
   path: '/Giai-phap',
   name: 'GiaiPhat',
   component: () => import('../views/GiaiPhat.vue')

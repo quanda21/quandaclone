@@ -1,0 +1,134 @@
+{
+    "home": "Home",
+    "about": "About Us",
+    "services1": "Services",
+    "solutions": "Solutions",
+    "recruitment": "Recruitment",
+    "contact": "Contact",
+    "hotline": "Hotline",
+    "sms": "SMS Messages",
+    "branded_calls": "Branded Calls",
+    "value_added_services": "Value-Added Services",
+    "app_development": "App and Game Development",
+    "system_operations": "System Operations",
+    "voip": "VoIP Solutions",
+    "messaging": "Messaging Solutions",
+    "email": "Email Solutions",
+
+   
+    "it_solution_heading": "SMART IT SOLUTIONS FOR YOUR BUSINESS",
+    "it_solution_description": "We specialize in researching, building, and developing IT and telecommunications products on the Internet and mobile networks. Our mission is to provide optimal solutions tailored to each customer's needs in the IT and Telecommunications market.",
+    "se": "Services",
+    "contact_us": "Contact Us" ,
+
+
+
+    "nd1": "About Us",
+    "about": "About Us",
+    "about_description": "VPMEDIA is a company operating in the field of telecommunications and IT, established to become a leading enterprise in providing value-added telecommunications services on the Internet and mobile networks in Vietnam. We are known as a reliable provider of innovative software solutions for the domestic telecommunications market and beyond.",
+    "read_more": "Read More",
+    "years_of_innovation": "Years of development and innovation",
+    
+
+    "services": {
+    "providedTitle": "What We Provide",
+    "mainTitle": "Our Services",
+    "details": "Details",
+    "systemOperation": {
+      "title": "System Operation",
+      "desc": "Providing management, monitoring, and optimization solutions for servers, networks, and IT infrastructure. Ensuring the system runs stably, safely, and efficiently."
+    },
+    "sms": {
+      "title": "SMS Messaging",
+      "desc": "SMS Brandname service helps businesses send promotional messages, customer care, OTP, and transaction notifications with high reliability, fast speed, and reasonable cost."
+    },
+    "voiceBrand": {
+      "title": "Voice Brand Calls",
+      "desc": "Voice Brandname service allows businesses to make calls displaying their brand name, increasing recognition, trust, and customer reach."
+    },
+    "vas": {
+      "title": "Value-Added Services (VAS)",
+      "desc": "Provides value-added solutions such as virtual PBX, USSD, digital content services, auto-subscription registration, helping businesses reach customers more effectively and enhance user experience."
+    },
+    "devGames": {
+      "title": "App and Game Development",
+      "desc": "Designing, programming, and deploying mobile apps, web, and custom software for businesses. We also develop mobile games and online interactive platforms."
+    },
+    "voip": {
+      "title": "VoIP Call Center Solution",
+      "desc": "Providing and deploying IP PBX (VoIP) to help businesses optimize costs, improve efficiency, and enhance customer experience. Supports free internal calls, recording, IVR, detailed reports, and CRM integration."
+    }
+  }  ,
+
+
+
+ 
+
+  "applications": {
+    "sectionTitle": "Our Developed Applications",
+    "sectionSubtitle": "We proudly present our standout applications.",
+    "apps": [
+      {
+        "title": "VBot - Multi-Feature AI Hotline",
+        "description": "VBot is an intelligent AI hotline solution that helps businesses automate customer care, optimize communication processes, and enhance user experience. With advanced AI technology, VBot can handle calls, respond to messages, and support customers 24/7.",
+        "features": [
+          "Automates the hotline with AI, reducing operational costs",
+          "Supports multiple channels: voice, SMS, chatbot, integrates with CRM",
+          "Provides reports, data analysis, and optimizes hotline performance",
+          "Flexible SDK, easy to integrate into business applications and systems"
+        ],
+        "titles": "With its flexibility, ease of customization, and powerful SDK integration, VBot is the perfect solution to help businesses enhance customer service quality and optimize operational efficiency."
+      },
+      {
+        "title": "VScan - Document Scanning Application",
+        "description": "VScan is a powerful document scanning application that helps you convert paper documents, contracts, invoices, and many other types of documents into digital format quickly and accurately. With advanced Optical Character Recognition (OCR) technology, VScan helps you store, search, and share documents easily.",
+        "features": [
+          "Financial data analysis",
+          "Detailed and visual reports",
+          "Easy integration with existing systems"
+        ],
+        "titles": "With VScan, you can conveniently digitize documents, save time, and improve work efficiency."
+      },
+      {
+        "title": "Electronic Office",
+        "description": "VOffice is an electronic office solution that helps businesses digitalize workflows, manage documents, oversee tasks, and optimize work efficiency. With its user-friendly interface and intelligent system, VOffice connects employees, reduces paperwork, and improves management efficiency.",
+        "features": [
+          "Smart document management",
+          "Integrated work calendar and reminders",
+          "High data security"
+        ],
+        "titles": "With VOffice, businesses can modernize their work model, save time, and boost productivity."
+      },
+      {
+        "title": "Golden Health",
+        "description": "Golden Health is a personal health care application that helps users effectively monitor and manage their health. With smart features, Golden Health supports users in tracking heart rate, blood pressure, weight, and other important health indicators.",
+        "features": [
+          "Track heart rate, blood pressure, weight, and other key health indicators",
+          "Record health logs and treatment progress",
+          "Remind users to take medications, schedule doctor visits, and exercise",
+          "Analyze health and suggest ways to improve physical condition"
+        ],
+        "titles": "With Golden Health, you can proactively care for your health, build a healthy lifestyle, and prevent disease risks."
+      }
+    ]
+  },
+
+
+
+
+  "collaboration.title": "PARTNER WITH US?",
+  "collaboration.heading": "TECHNOLOGY APPLICATION TO ENHANCE EXPERIENCE",
+  "collaboration.description": "We leverage the power of technology to provide optimal solutions, helping businesses operate more efficiently, securely, and flexibly. Together, we can create sustainable and breakthrough values in the digital age.",
+  "collaboration.button": "Contact us",
+    
+
+
+  "clients": {
+    "trustedBy": "TRUSTED BY MANY CLIENTS",
+    "ourClients": "OUR CLIENTS"
+  }
+
+
+  }
+  
+
