@@ -19,48 +19,30 @@
         <li>
           <router-link to="/ve-chung-toi" class="no-underline text-white font-600 ">{{ $t('about') }}</router-link>
         </li>
-        <li class="relative group ">
-          <router-link to="/dich-vu"  class="no-underline text-white font-600 ">
-            {{ $t('se') }} 
-            <el-icon><ArrowDown /></el-icon>
-          </router-link>
-          <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10 mt-16px">
-            <li>
-              <router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('sms') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/dichvu-cuoc-goi-thuong-hieu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('branded_calls') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('value_added_services') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('app_development') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('system_operations') }}</router-link>
-            </li>
-          </ul>
-        </li>
-        <li class="relative group">
-          <router-link to="/Giai-phap" class="no-underline text-white font-600 ">{{ $t('solutions') }}
-
-            <el-icon><ArrowDown /></el-icon>
-
-
-          </router-link>
-          <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10">
-            <li>
-              <router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('voip') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/Giai-phat-tttn" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('messaging') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('email') }}</router-link>
-            </li>
-          </ul>
-        </li>
+        <li class="relative group dropdown-bridge">
+  <router-link to="/dich-vu" class="no-underline text-white font-600">
+    {{ $t('se') }}
+    <el-icon><ArrowDown /></el-icon>
+  </router-link>
+  <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10 mt-20px">
+    <li><router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('sms') }}</router-link></li>
+    <li><router-link to="/dichvu-cuoc-goi-thuong-hieu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('branded_calls') }}</router-link></li>
+    <li><router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('value_added_services') }}</router-link></li>
+    <li><router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('app_development') }}</router-link></li>
+    <li><router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('system_operations') }}</router-link></li>
+  </ul>
+</li>
+<li class="relative group dropdown-bridge">
+  <router-link to="/Giai-phap" class="no-underline text-white font-600">
+    {{ $t('solutions') }}
+    <el-icon><ArrowDown /></el-icon>
+  </router-link>
+  <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10 mt-20px">
+    <li><router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('voip') }}</router-link></li>
+    <li><router-link to="/Giai-phat-tttn" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('messaging') }}</router-link></li>
+    <li><router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('email') }}</router-link></li>
+  </ul>
+</li>
         <li>
           <router-link to="/lien-he" class="no-underline text-white font-600 ">{{ $t('recruitment') }}</router-link>
         </li>
@@ -101,13 +83,15 @@
         <el-dropdown-item command="vi" class=" text-white">
            Tiếng Việt
         </el-dropdown-item>
-        <el-dropdown-item command="en">
+        <el-dropdown-item command="en" class=" text-white" >
            Tiếng Anh
         </el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
   </div>
+
+
 
   
   
@@ -144,15 +128,15 @@ function startRipple(event) {
     top: `${event.clientY - rect.top - size / 2}px`,
     transform: 'scale(0)',
     opacity: '0.7',
-    transition: 'transform 1s ease, opacity 2s ease',
+    transition: 'transform 1s ease, opacity 1000s ease',
     position: 'absolute',
-    backgroundColor:' rgb(5 107 217)', // Màu nền của button
+ backgroundColor:' rgb(5 107 217)', // Màu nền của button
   }
   buttonStyle.value.backgroundColor = 'rgba(0, 0, 255, 0.7)'; // Màu rõ hơn khi ripple bắt đầu
 
   // Khi hover vào, bắt đầu scale lớn ra
   requestAnimationFrame(() => {
-    rippleStyle.value.transform = 'scale(4)'
+    rippleStyle.value.transform = 'scale(9)'
     rippleStyle.value.opacity = '0'
   })
 }
@@ -186,5 +170,20 @@ function clearRipple() {
   
   background-color:  rgb(5 107 217) ; /* màu sáng khi hover */
   color: white; /* màu chữ khi hover */
+ 
 }
+
+.dropdown-bridge::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* khoảng trống hover */
+  background: transparent;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+
 </style>

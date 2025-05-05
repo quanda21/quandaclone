@@ -21,12 +21,38 @@
       <p class="t leading-relaxed text-white80">
         {{ $t('it_solution_description') }}      </p>
       <div class="flex flex-wrap gap-6  ">
-        <el-button type="default" size="large" class="text-blue-800 border-white bg-white  w-40 h-12 ">
-          {{ $t('services1') }}
-        </el-button>
-        <el-button type="default" size="large" class="text-blue-800 border-white bg-white w-45 h-12 ">
-          {{ $t('contact_us') }}
-        </el-button>
+        <el-button 
+  type="default" 
+  size="large" 
+  class="relative overflow-hidden text-blue-800 border-white bg-white w-40 h-12 font-bold hover:bg-[#142b73] hover:text-white" 
+  @mouseenter="startRipple"
+  @mousemove="updateRipple"
+  @mouseleave="clearRipple"
+>
+  <span 
+    v-if="ripple" 
+    class="absolute rounded-full pointer-events-none" 
+    :style="rippleStyle"
+  ></span>
+  {{ $t('services1') }}
+</el-button>
+
+<el-button 
+      type="default" 
+      size="large" 
+      class="relative overflow-hidden text-blue-800 border-white bg-white w-45 h-12 font-bold hover:bg-[#142b73] hover:text-white transition-colors" 
+      @mouseenter="startRipple"
+      @mousemove="updateRipple"
+      @mouseleave="clearRipple"
+    >
+      <span 
+        v-if="ripple" 
+        class="absolute rounded-full pointer-events-none" 
+        :style="rippleStyle"
+      ></span>
+      {{ $t('contact_us') }}
+    </el-button>
+       
       </div>
     </div>
 <!-- <Test /> -->
@@ -334,6 +360,45 @@ const selectApp = (index) => {
 };
 
 
+const ripple = ref(false)
+const rippleStyle = ref({})
 
+function startRipple(event) {
+  const button = event.currentTarget
+  const rect = button.getBoundingClientRect()
+  const size = Math.max(rect.width, rect.height) * 2
+
+  ripple.value = true
+  rippleStyle.value = {
+    width: `${size}px`,
+    height: `${size}px`,
+    left: `${event.clientX - rect.left - size / 2}px`,
+    top: `${event.clientY - rect.top - size / 2}px`,
+    transform: 'scale(0)',
+    opacity: '0.6',
+    transition: 'transform 1s ease, opacity 20s ease',
+    position: 'absolute',
+    backgroundColor: 'rgba(20, 43, 115, 0.6)', // Màu xanh đậm
+  }
+
+  requestAnimationFrame(() => {
+    rippleStyle.value.transform = 'scale(20)'
+    rippleStyle.value.opacity = ''
+  })
+}
+
+function updateRipple(event) {
+  if (!ripple.value) return
+
+  const button = event.currentTarget
+  const rect = button.getBoundingClientRect()
+  const size = Math.max(rect.width, rect.height) * 2
+
+  rippleStyle.value.left = `${event.clientX - rect.left - size / 2}px`
+  rippleStyle.value.top = `${event.clientY - rect.top - size / 2}px`
+}
+
+function clearRipple() {
+  ripple.value = false
+}
 </script>
-
