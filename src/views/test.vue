@@ -28,7 +28,7 @@
     <li><router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('sms') }}</router-link></li>
     <li><router-link to="/dichvu-cuoc-goi-thuong-hieu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('branded_calls') }}</router-link></li>
     <li><router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('value_added_services') }}</router-link></li>
-    <li><router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('app_development') }}</router-link></li>
+    <li><router-link to="/dich-vu-ung-dung-games" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('app_development') }}</router-link></li>
     <li><router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">{{ $t('system_operations') }}</router-link></li>
   </ul>
 </li>
@@ -92,7 +92,6 @@
   </div>
 
 
-
   
   
 </template>
@@ -128,7 +127,7 @@ function startRipple(event) {
     top: `${event.clientY - rect.top - size / 2}px`,
     transform: 'scale(0)',
     opacity: '0.7',
-    transition: 'transform 1s ease, opacity 1000s ease',
+    transition: 'transform 5s ease, opacity 5s ease',
     position: 'absolute',
  backgroundColor:' rgb(5 107 217)', // Màu nền của button
   }

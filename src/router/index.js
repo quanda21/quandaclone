@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Dichvu from '@/views/Dichvu.vue';
 import Call from '@/views/Call.vue';
+import PTGame from '@/views/PTGame.vue';
 import { createApp } from 'vue';  
 
 const routes = [
@@ -53,6 +54,14 @@ name: 'Contact',
 component: () => import('../views/Contact.vue')
 
  },
+
+
+{
+ path: '/dich-vu-ung-dung-games',
+ name: 'PTGame',
+ component: () => import('../views/PTGame.vue')
+},
+
 
 
 ];

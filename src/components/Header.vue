@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { ChromeFilled, ArrowDown } from '@element-plus/icons-vue';
 
 const isScrolled = ref(false);
 
@@ -14,7 +15,15 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll); // Gỡ bỏ sự kiện khi component bị hủy
 });
+import { useI18n } from 'vue-i18n';
 
+const { locale } = useI18n();
+const currentLocale = ref(locale.value);
+
+const changeLanguage = (lang) => {
+  locale.value = lang;
+  currentLocale.value = lang;
+};
 
 </script>
 
@@ -59,7 +68,7 @@ onUnmounted(() => {
             <router-link to="/dich-vu-GTVT" class="no-underline text-gray-800">Dịch vụ GTGT</router-link>
           </el-menu-item>
           <el-menu-item index="3-4">
-            <router-link to="/dich-vu-GTVT" class="no-underline text-gray-800">Phát triển ứng dụng và games</router-link>
+            <router-link to="/dich-vu-ung-dung-games" class="no-underline text-gray-800">Phát triển ứng dụng và games</router-link>
           </el-menu-item>
           <el-menu-item index="3-5">
             <router-link to="/dich-vu-van-hanh" class="no-underline text-gray-800">Vận hành hệ thống</router-link>
@@ -93,6 +102,21 @@ onUnmounted(() => {
 >
   Hotline : +84(0) 902 825 586
 </el-button>
+
+<el-dropdown trigger="click" @command="changeLanguage">
+  <div class="flex items-center cursor-pointer text-gray-800">
+    <el-icon class="icon-black"><ChromeFilled /></el-icon>
+    <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
+    <el-icon class="ml-1 icon-black"><ArrowDown /></el-icon>
+  </div>
+  <template #dropdown>
+    <el-dropdown-menu>
+      <el-dropdown-item command="en">English</el-dropdown-item>
+      <el-dropdown-item command="vi">Tiếng Việt</el-dropdown-item>
+    </el-dropdown-menu>
+  </template>
+</el-dropdown>
+
 
     </div> 
   </header>
@@ -130,6 +154,10 @@ header {
   box-shadow: inset 0 0 0 100px var(--fill-color);
   color: white !important;
   transition: box-shadow 0.9s ease-in-out;
+}
+
+.icon-black {
+  color: black; /* Đổi màu biểu tượng thành đen */
 }
 
 </style>
