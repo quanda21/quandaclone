@@ -71,7 +71,7 @@
     Hotline: +84(0) 902 825 586
   </el-button>
 
-    <el-dropdown trigger="click" @command="changeLanguage">
+    <el-dropdown  @command="changeLanguage">
     <div class="flex items-center cursor-pointer text-white">
       <el-icon><ChromeFilled /></el-icon>
             <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
@@ -79,11 +79,11 @@
     </div>
 
     <template #dropdown>
-      <el-dropdown-menu class="bg-dark text-white rounded-lg ">
-        <el-dropdown-item command="vi" class=" text-white">
+      <el-dropdown-menu class="bg-white text-black rounded-lg ">
+        <el-dropdown-item command="vi" >
            Tiếng Việt
         </el-dropdown-item>
-        <el-dropdown-item command="en" class=" text-white" >
+        <el-dropdown-item command="en"  >
            Tiếng Anh
         </el-dropdown-item>
       </el-dropdown-menu>

@@ -103,7 +103,7 @@ const changeLanguage = (lang) => {
   Hotline : +84(0) 902 825 586
 </el-button>
 
-<el-dropdown trigger="click" @command="changeLanguage">
+<el-dropdown  @command="changeLanguage">
   <div class="flex items-center cursor-pointer text-gray-800">
     <el-icon class="icon-black"><ChromeFilled /></el-icon>
     <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
