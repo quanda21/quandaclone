@@ -59,11 +59,11 @@
   /* Hiệu ứng trượt từ trên xuống */
   .slide-down-enter-active,
   .slide-down-leave-active {
-    transition: all 0.5s ease;
+    transition: all 1s ease;
   }
   .slide-down-enter-from {
     opacity: 0;
-    transform: translateY(-300px); /* Trượt từ phía trên */
+    transform: translateY(-800px); /* Trượt từ phía trên */
   }
   .slide-down-leave-to {
     opacity: 0;

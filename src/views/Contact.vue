@@ -18,9 +18,9 @@
 
       
 
-    <div class="w-full">
+    <div class="w-full ">
 
-        <div class="bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500 text-center"> 
+        <div class="bg-white shadow-lg rounded-lg p-8  border-t-4 border-orange-500 text-center"> 
             <h2 class="text-xl font-semibold text-orange-500 mb-4">LIÊN HỆ VỚI CHÚNG TÔI</h2>
 
         </div>

@@ -4,64 +4,60 @@
   <!--gt -->
   <section
   
-  class="relative w-full text-white  min-h-screen " 
+  class="relative w-full text-white  min-h-screen z-0 " 
   style="background: linear-gradient(to bottom, #021e7d 0%, #0573e4 100%)"
 >
+<!-- <div class="w-full mx-auto gap-10 items-center relative z-5 py-20  md:px-12 lg:px-24 flex flex-col md:flex-row"> -->
 
-    
-  
-  <div class=" w-full mx-auto px-80 grid md:grid-cols-2 gap-10 items-center relative z-5  py-20 ">
-    <ParticleBackground class="absolute inset-0 -z-10"/>
+  <div class=" container w-full mx-auto    gap-10 relative z-5  py-35  h-auto md:px-10 lg:px-25  flex flex-col md:flex-row   ">
+    <ParticleBackground class="  inset-0 -z-10"/>
 
     <!-- Left: Text Content  -->
-    <div class="space-y-6  py-50 ">
-      <h1 class="text-4xl lg:text-5xl font-bold leading-tight  " style="line-height: 70px;"  >
+    <div class="space-y-6 flex flex-col px-4  justify-center"> 
+      <h1 class=" lg:text-5xl font-bold leading-tight  " style="line-height: 70px;"  >
         {{ $t('it_solution_heading') }}
       </h1>
-      <p class="t leading-relaxed text-white80">
+      <p class="  leading-relaxed text-white80">
         {{ $t('it_solution_description') }}      </p>
-      <div class="flex flex-wrap gap-6  ">
-        <el-button 
-  type="default" 
-  size="large" 
-  class="relative overflow-hidden text-blue-800 border-white bg-white w-40 h-12 font-bold hover:bg-[#142b73] hover:text-white" 
-  @mouseenter="startRipple"
-  @mousemove="updateRipple"
-  @mouseleave="clearRipple"
->
-  <span 
-    v-if="ripple" 
-    class="absolute rounded-full pointer-events-none" 
-    :style="rippleStyle"
-  ></span>
-  {{ $t('services1') }}
-</el-button>
-
-<el-button 
-      type="default" 
-      size="large" 
-      class="relative overflow-hidden text-blue-800 border-white bg-white w-45 h-12 font-bold hover:bg-[#142b73] hover:text-white transition-colors" 
-      @mouseenter="startRipple"
-      @mousemove="updateRipple"
-      @mouseleave="clearRipple"
+  <div class="flex flex-wrap gap-6">
+    <button 
+      class="relative overflow-hidden w-40 h-12 font-bold border border-white transition-colors duration-500 rounded"
+      :class="hovered[0] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
+      @mouseenter="startRipple(0, $event)"
+      @mousemove="updateRipple(0, $event)"
+      @mouseleave="clearRipple(0)"
     >
       <span 
-        v-if="ripple" 
-        class="absolute rounded-full pointer-events-none" 
-        :style="rippleStyle"
+        v-if="ripple[0]" 
+        class="absolute z-0 rounded-full pointer-events-none"
+        :style="rippleStyle[0]"
       ></span>
-      {{ $t('contact_us') }}
-    </el-button>
-       
-      </div>
+      <span class="relative z-10">{{ $t('services1') }}</span>
+    </button>
+    
+    <button 
+      class="relative overflow-hidden text-[#142b73] bg-white w-40 h-12 transition-colors duration-500 border-none rounded-lg"
+      :class="hovered[1] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
+      @mouseenter="startRipple(1, $event)"
+      @mousemove="updateRipple(1, $event)"
+      @mouseleave="clearRipple(1)"
+    >
+      <span 
+        v-if="ripple[1]" 
+        class="absolute z-0 bg-[#142b73] rounded-full pointer-events-none"
+        :style="rippleStyle[1]"
+      ></span>
+      <span class="relative z-10">{{ $t('contact_us') }}</span>
+    </button>
+  </div>
     </div>
 <!-- <Test /> -->
     <!-- Right: Image -->
-    <div class="order-2 md:order-1 ">
+    <div class=" flex flex-col">
       <img
         src="@/assets/images/home.png"
         alt="Datacenter Illustration"
-        class=" mx-auto"
+        class=" mx-auto "
       />
     </div>
     
@@ -70,11 +66,11 @@
 
   <!-- Background Shape -->
   
-  <div class="absolute bottom-20px lg:bottom-15px md:bottom-0px  left-0 w-full z-0 py-1 "> 
+  <div  class="absolute bottom-0 left-0 w-full z-0"> 
     <img
   src="@/assets/images/home-wave-bg.svg"
   alt="Background Wave"
-  class="w-full transform translate-y-7%"
+  class="w-full block "
 />
 
 </div>
@@ -82,8 +78,8 @@
 
   
 <!--nd1 -->
-<section class="about py-16">
-  <div class="container mx-auto px-16 flex flex-col md:flex-row">
+<section class="about py-20">
+  <div class="container mx-auto px-20 flex flex-col md:px-10 lg:px-25 md:flex-row">
     <div class="md:w-1/2 flex flex-col justify-center">
       <h2 class="text-lg text-blue-800 font-semibold tracking-wide uppercase">
         {{ $t('about') }}
@@ -118,7 +114,7 @@
   <!--nd2 -->
    
 <section class="serviece py-16 bg-gray-100">
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 md:px-10 lg:px-25">
         <h1 class="text-xl font-bold text-center text-orange-600 mb-4">
           {{ $t('services.providedTitle') }}
         </h1>
@@ -180,7 +176,7 @@
 
 
   <!--nd3 --> 
-  <section class="applications py-20">
+  <section class="applications py-20 md:px-10 lg:px-24">
   <div class="container mx-auto w-full">
     <h1 class="text-xl font-bold text-center text-orange-600 mb-4">
       {{ $t('applications.sectionTitle') }}
@@ -190,16 +186,16 @@
     </h2>
 
     <!-- Nút chọn ứng dụng -->
-    <div class="flex justify-center gap-6 mb-9 w-full">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-5 mb-10 w-full">
       <el-button
         v-for="(app, index) in applications"
         :key="index"
-        :class="[
-          'px-6 py-6 w-full text-lg font-semibold rounded-lg shadow-md transition-all',
-          selectedApp === index
-            ? 'bg-[#142b73] text-white'
-            : 'bg-gray-200 text-black hover:bg-[#142b73]',
-        ]"
+          :class="[
+        'px-10 py-5 text-lg font-semibold rounded-lg shadow-md transition-all',
+        selectedApp === index
+          ? 'bg-[#142b73] text-white'
+          : 'bg-gray-200 text-black hover:bg-[#142b73] hover:text-white',
+      ]"
         @click="selectApp(index)"
       >
         {{ $t(`applications.apps[${index}].title`) }}
@@ -246,7 +242,7 @@
 
 <!--nd4 -->
     <section
-    class="w-full bg-cover bg-center text-white text-center py-20 px-4 bg-[#001d4c] bg-opacity-50 relative after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-0  "
+    class="w-full bg-cover bg-center text-white  text-center py-20 px-4 bg-[#001d4c] bg-opacity-50 relative after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-0  "
       :style="`background-image: url(${bg})`"
       
       >
@@ -263,8 +259,8 @@
 
 
 <!--nd5 -->
-<section class="py-12 text-center bg-gray-50 ">
-    <p class="text-orange-500 font-semibold text-sm tracking-wider mb-2">
+<section class="py-12 text-center bg-gray-50  ">
+    <p class="text-orange-500 font-semibold text-sm tracking-wider mb-2 ">
       {{ $t('clients.trustedBy') }}    </p>
     <h2 class="text-3xl font-bold text-blue-900 mb-10">{{ $t('clients.ourClients') }}</h2>
    
@@ -359,46 +355,49 @@ const selectApp = (index) => {
   selectedApp.value = index;
 };
 
+const ripple = ref([false, false])
+const rippleStyle = ref([{}, {}])
+const hovered = ref([false, false])
 
-const ripple = ref(false)
-const rippleStyle = ref({})
-
-function startRipple(event) {
+function startRipple(index, event) {
   const button = event.currentTarget
   const rect = button.getBoundingClientRect()
   const size = Math.max(rect.width, rect.height) * 2
 
-  ripple.value = true
-  rippleStyle.value = {
+  hovered.value[index] = true
+  ripple.value[index] = true
+  rippleStyle.value[index] = {
     width: `${size}px`,
     height: `${size}px`,
     left: `${event.clientX - rect.left - size / 2}px`,
     top: `${event.clientY - rect.top - size / 2}px`,
     transform: 'scale(0)',
-    opacity: '0.6',
-    transition: 'transform 1s ease, opacity 20s ease',
+    opacity: '1',
+    transition: 'transform 7s ease-out, opacity 7s ease-out',
     position: 'absolute',
-    backgroundColor: 'rgba(20, 43, 115, 0.6)', // Màu xanh đậm
+    backgroundColor: '#142b73',
+    zIndex: 1,
+    borderRadius: '50%',
+    pointerEvents: 'none',
   }
 
   requestAnimationFrame(() => {
-    rippleStyle.value.transform = 'scale(20)'
-    rippleStyle.value.opacity = ''
+    rippleStyle.value[index].transform = 'scale(9)'
+    rippleStyle.value[index].opacity = '0'
   })
 }
 
-function updateRipple(event) {
-  if (!ripple.value) return
-
+function updateRipple(index, event) {
+  if (!ripple.value[index]) return
   const button = event.currentTarget
   const rect = button.getBoundingClientRect()
   const size = Math.max(rect.width, rect.height) * 2
-
-  rippleStyle.value.left = `${event.clientX - rect.left - size / 2}px`
-  rippleStyle.value.top = `${event.clientY - rect.top - size / 2}px`
+  rippleStyle.value[index].left = `${event.clientX - rect.left - size / 2}px`
+  rippleStyle.value[index].top = `${event.clientY - rect.top - size / 2}px`
 }
 
-function clearRipple() {
-  ripple.value = false
+function clearRipple(index) {
+  ripple.value[index] = false
+  hovered.value[index] = false
 }
 </script>

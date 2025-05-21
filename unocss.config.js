@@ -11,6 +11,7 @@ export default defineConfig({
        'hover-imae' :'transition-transform duration-300 transform group-hover:-scale-x-100',
       'service-hover': ' group relative overflow-hidden  p-6 rounded-xl  transition-all hover:-translate-y-2',
 
+
     },
     theme: {
       extend: {

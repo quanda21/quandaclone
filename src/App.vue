@@ -9,10 +9,9 @@ import Test from './views/test.vue'
 
 <template>
   <div class="w-full min-h-screen bg-white ">
-    <Header class="fixed top-0 left-0 w-full  bg-white " />
+    <Header class="  w-full  bg-white " />
     <main class="font-sans ">
-      
-      <test/>
+      <test />
       <router-view />
       <Scroll />
     </main>
