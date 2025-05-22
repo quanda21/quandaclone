@@ -17,8 +17,8 @@
       </section>
   
       <!-- Content Section -->
-      <section class="py-16 bg-white w-full"> 
-        <div class="container mx-auto px-4">
+      <section class="py-16 bg-white "> 
+         <div class="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
           <h2 class="text-4xl font-bold text-center text-blue-900 mb-8"></h2>
           <p class="text-lg text-gray-600 leading-relaxed mb-8">
             

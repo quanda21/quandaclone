@@ -21,7 +21,7 @@
         {{ $t('it_solution_description') }}      </p>
   <div class="flex flex-wrap gap-6">
     <button 
-      class="relative overflow-hidden w-40 h-12 font-bold border border-white transition-colors duration-500 rounded"
+      class="relative overflow-hidden w-40 h-12 font-bold border bg-white  transition-colors duration-500 rounded"
       :class="hovered[0] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
       @mouseenter="startRipple(0, $event)"
       @mousemove="updateRipple(0, $event)"
@@ -36,7 +36,7 @@
     </button>
     
     <button 
-      class="relative overflow-hidden text-[#142b73] bg-white w-40 h-12 transition-colors duration-500 border-none rounded-lg"
+      class="relative overflow-hidden text-[#142b73] bg-white w-50 h-12 transition-colors duration-500 border-none rounded-lg"
       :class="hovered[1] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
       @mouseenter="startRipple(1, $event)"
       @mousemove="updateRipple(1, $event)"
@@ -53,13 +53,13 @@
     </div>
 <!-- <Test /> -->
     <!-- Right: Image -->
-    <div class=" flex flex-col">
-      <img
-        src="@/assets/images/home.png"
-        alt="Datacenter Illustration"
-        class=" mx-auto "
-      />
-    </div>
+<div class="flex flex-col w-full">
+  <img
+    src="@/assets/images/home.png"
+    alt="Datacenter Illustration"
+    class="mx-auto w-full max-w-xs sm:max-w-md md:max-w-lg h-auto"
+  />
+</div>
     
     
   </div>

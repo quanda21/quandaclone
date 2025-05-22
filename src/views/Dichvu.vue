@@ -1,11 +1,9 @@
 <template>
     <!-- Hero Section -->
      <section
-       class="w-full h-100 bg-cover bg-center text-white flex items-center justify-center"
+       class="w-full h-100 bg-cover bg-center text-white flex items-center justify-center "
        style="background-image: url('./src/assets/images/banner-bg.jpg');" >
 
-
-     
 
 
 
@@ -16,7 +14,6 @@
            <RouterLink to="/" class="text-white text-lg hover:text-gray-300">Trang chủ</RouterLink>
          <p class="text-lg">  •Dịch vụ</p>
          </div>
-         
        </div>
      </section>
  
@@ -61,7 +58,6 @@
   <div class="flex flex-col space-y-4"></div> -->
 
 
- <!-- button -->
  <div class="relative g-gray-100 p-4 rounded shadow-md  ">
     <h3 class="text-lg font-bold text-black mb-4 border-b-2 border-blue-900 pb-2">Dịch Vụ</h3>
 

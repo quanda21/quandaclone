@@ -59,8 +59,7 @@
        <!-- hiệu ứng ripple khi hover vào button -->
        <button
     ref="button"
-    class="relative overflow-hidden bg-[#142b73] text-white px-7 py-5  hover:text-white transition duration-300 border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-    @mouseenter="startRipple"
+    class="relative overflow-hidden bg-[#142b73] text-white px-7 py-5  hover:text-white transition duration-300 border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)] hidden sm:block"
     @mousemove="updateRipple"
     @mouseleave="clearRipple"
   >
