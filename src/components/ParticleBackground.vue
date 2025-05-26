@@ -1,6 +1,6 @@
 <template>
     <div class="particle-background">
-        <canvas ref="canvas" class="absolute w-full h-full top-0"></canvas>
+        <canvas ref="canvas" class="absolute w-full  top-0"></canvas>
     </div>
 </template>
 

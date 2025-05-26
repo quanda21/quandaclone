@@ -1,29 +1,345 @@
-<script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import { ChromeFilled, ArrowDown } from '@element-plus/icons-vue';
+<template>
+  <div
+    :class="['fixed top-0 left-0 right-0 z-50 bg-white shadow-sm transition-transform duration-700', 
+      { 'slide-in': isScrolled, 'slide-out': !isScrolled }]"
+  >
+    <div class="w-full container mx-auto px-4 md:px-10 lg:px-24 py-4 flex justify-between items-center">
 
-const isScrolled = ref(false);
+      <div class="logo">
+        <router-link to="/">
+          <img
+            src="@/assets/images/logo-black.png"
+            alt="VP Media"
+            class="transition-transform duration-300"
+          />
+        </router-link>
+      </div>
+
+    <nav class="desktop-only hidden md:flex justify-center items-center text-black uppercase" style="font-size: 16px;">
+        <ul class="flex space-x-6 list-none leading-tight">
+          <li>
+            <router-link to="/" class=" text-black font-600 hover:text-blue-700">{{ $t('home') }}</router-link>
+          </li>
+          <li>
+            <router-link to="/ve-chung-toi" class="no-underline text-black  font-600 hover:text-blue-700" > {{ $t('about') }}</router-link>
+          </li>
+          <li class="relative group dropdown-bridge">
+            <router-link to="/dich-vu" class="no-underline text-black font-600 hover:text-blue-700">
+              {{ $t('se') }}
+              <el-icon><ArrowDown /></el-icon>
+            </router-link>
+          <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10 mt-5">
+              <li><router-link to="/dich-vu" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-light ">{{ $t('sms') }}</router-link></li>
+              <li><router-link to="/dichvu-cuoc-goi-thuong-hieu" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-white">{{ $t('branded_calls') }}</router-link></li>
+              <li><router-link to="/dich-vu-GTVT" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-white">{{ $t('value_added_services') }}</router-link></li>
+              <li><router-link to="/dich-vu-ung-dung-games" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-white">{{ $t('app_development') }}</router-link></li>
+              <li><router-link to="/dich-vu-van-hanh" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-white">{{ $t('system_operations') }}</router-link></li>
+            </ul>
+          </li>
+          <li class="relative group dropdown-bridge">
+            <router-link to="/Giai-phap" class="no-underline text-black font-600 hover:text-blue-700">
+              {{ $t('solutions') }}
+              <el-icon><ArrowDown /></el-icon>
+            </router-link>
+            <ul class="absolute hidden group-hover:block bg-white shadow-md rounded w-80 text-left z-10 mt-5">
+              <li><router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-white">{{ $t('voip') }}</router-link></li>
+              <li><router-link to="/Giai-phat-tttn" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-white">{{ $t('messaging') }}</router-link></li>
+              <li><router-link to="/Giai-phap" class="block px-4 py-2 text-gray-800 hover:bg-[#142b73] hover:text-white">{{ $t('email') }}</router-link></li>
+            </ul>
+          </li>
+          <li>
+            <router-link to="/lien-he" class="no-underline text-black font-600 hover:text-blue-700">{{ $t('recruitment') }}</router-link>
+          </li>
+          <li>
+            <router-link to="/lien-he" class="no-underline text-black font-600 hover:text-blue-700">{{ $t('contact') }}</router-link>
+          </li>
+        </ul>
+      </nav>
+<button
+  ref="button"
+  class="desktop-only relative overflow-hidden bg-[#142b73] text-white px-7 py-5 hover:text-white transition duration-300 border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+  @mouseenter="startRipple"
+  @mousemove="updateRipple"
+  @mouseleave="clearRipple"
+>
+        <span
+          v-if="ripple"
+          class="absolute bg-white/20 rounded-full pointer-events-none"
+          :style="rippleStyle"
+        ></span>
+        Hotline: +84(0) 902 825 586
+      </button>
+
+      <el-dropdown @command="changeLanguage" class="ml-4">
+        <div class="flex items-center cursor-pointer text-black">
+          <el-icon><ChromeFilled /></el-icon>
+          <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
+          <el-icon class="ml-1"><ArrowDown /></el-icon>
+        </div>
+        <template #dropdown>
+          <el-dropdown-menu class="bg-white text-black rounded-lg">
+            <el-dropdown-item command="vi">Tiếng Việt</el-dropdown-item>
+            <el-dropdown-item command="en">English</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+
+
+
+
+<!-- Nút menu mobile -->
+<div class="mobile-only hidden items-center">
+  <button
+    @click="toggleMobileMenu"
+    class="relative w-10 h-10 flex flex-col justify-center items-center focus:outline-none"
+  >
+    <!-- Thanh 1 -->
+    <span
+      :class="[
+        'absolute h-0.5 w-6 bg-black rounded transition-transform duration-300',
+        mobileMenuOpen ? 'rotate-45 top-1/2' : '-translate-y-2'
+      ]"
+    ></span>
+
+    <!-- Thanh 2 -->
+    <span
+      :class="[
+        'absolute h-0.5 w-6 bg-black rounded transition-opacity duration-300',
+        mobileMenuOpen ? 'opacity-0' : 'opacity-100'
+      ]"
+    ></span>
+
+    <!-- Thanh 3 -->
+    <span
+      :class="[
+        'absolute h-0.5 w-6 bg-black rounded transition-transform duration-300',
+        mobileMenuOpen ? '-rotate-45 top-1/2' : 'translate-y-2'
+      ]"
+    ></span>
+  </button>
+</div>
+
+<!-- Menu mobile --><!-- Overlay full screen --><!-- Overlay nền mờ có thể giữ lại hoặc bỏ -->
+ <transition name="slide-down">
+  <div
+    v-if="mobileMenuOpen"
+    class="fixed top-[72px] left-1/2 z-50 w-[90vw] max-w-md -translate-x-1/2 bg-white rounded-xl shadow-lg border border-gray-200"
+  >
+    <ul class="divide-y divide-gray-200">
+      <!-- Trang chủ -->
+      <li>
+        <router-link
+          to="/"
+          class="block px-6 py-4 text-base text-gray-700 font-medium"
+          @click="closeMobileMenu"
+        >
+          {{ $t('home') }}
+        </router-link>
+      </li>
+
+      <!-- Về chúng tôi -->
+      <li>
+        <router-link
+          to="/ve-chung-toi"
+          class="block px-6 py-4 text-base text-gray-700 font-medium"
+          @click="closeMobileMenu"
+        >
+          {{ $t('about') }}
+        </router-link>
+      </li>
+
+      <!-- Dịch vụ -->
+      <li
+        @click="toggleSubMenu('dichvu')"
+        class="flex justify-between items-center px-6 py-4 text-base font-medium text-gray-700 cursor-pointer"
+      >
+        {{ $t('se') }}
+        <span class="text-xl">{{ openSubMenu === 'dichvu' ? '-' : '+' }}</span>
+      </li>
+      <transition name="slide">
+        <ul
+          v-show="openSubMenu === 'dichvu'"
+          class="bg-gray-50 pl-8 py-2 space-y-2"
+        >
+          <li>
+            <router-link
+              to="/dich-vu"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('sms') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/dichvu-cuoc-goi-thuong-hieu"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('branded_calls') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/dich-vu-GTVT"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('value_added_services') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/dich-vu-ung-dung-games"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('app_development') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/dich-vu-van-hanh"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('system_operations') }}
+            </router-link>
+          </li>
+        </ul>
+      </transition>
+
+      <!-- Giải pháp -->
+      <li
+        @click="toggleSubMenu('giaiphap')"
+        class="flex justify-between items-center px-6 py-4 text-base font-medium text-gray-700 cursor-pointer"
+      >
+        {{ $t('solutions') }}
+        <span class="text-xl">{{ openSubMenu === 'giaiphap' ? '-' : '+' }}</span>
+      </li>
+      <transition name="slide">
+        <ul
+          v-show="openSubMenu === 'giaiphap'"
+          class="bg-gray-50 pl-8 py-2 space-y-2"
+        >
+          <li>
+            <router-link
+              to="/Giai-phap"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('voip') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/Giai-phat-tttn"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('messaging') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              to="/Giai-phap"
+              class="block text-gray-600 py-1"
+              @click="closeMobileMenu"
+            >
+              {{ $t('email') }}
+            </router-link>
+          </li>
+        </ul>
+      </transition>
+
+      <!-- Tuyển dụng -->
+      <li>
+        <router-link
+          to="/lien-he"
+          class="block px-6 py-4 text-base text-gray-700 font-medium"
+          @click="closeMobileMenu"
+        >
+          {{ $t('recruitment') }}
+        </router-link>
+      </li>
+
+      <!-- Liên hệ -->
+      <li>
+        <router-link
+          to="/lien-he"
+          class="block px-6 py-4 text-base text-gray-700 font-medium"
+          @click="closeMobileMenu"
+        >
+          {{ $t('contact') }}
+        </router-link>
+      </li>
+    </ul>
+  </div>
+</transition>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+  
+</template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { ChromeFilled, ArrowDown } from '@element-plus/icons-vue'
+
+const isScrolled = ref(false)
+
+const mobileMenuOpen = ref(false)
+
+function toggleMobileMenu() {
+  mobileMenuOpen.value = !mobileMenuOpen.value
+}
+
+function closeMobileMenu() {
+  mobileMenuOpen.value = false
+}
+
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50; // Hiển thị header khi cuộn xuống hơn 50px
-};
+  isScrolled.value = window.scrollY > 50
+}
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll); // Đăng ký sự kiện cuộn
-});
+  window.addEventListener('scroll', handleScroll)
+})
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll); // Gỡ bỏ sự kiện khi component bị hủy
-});
-import { useI18n } from 'vue-i18n';
+  window.removeEventListener('scroll', handleScroll)
+})
 
-const { locale } = useI18n();
-const currentLocale = ref(locale.value);
 
-const changeLanguage = (lang) => {
-  locale.value = lang;
-  currentLocale.value = lang;
-};
+const openSubMenu = ref(null)
+
+function toggleSubMenu(menuName) {
+  openSubMenu.value = openSubMenu.value === menuName ? null : menuName
+}
+
+
+const { locale } = useI18n()
+const currentLocale = ref(locale.value)
+
+function changeLanguage(value) {
+  locale.value = value
+  currentLocale.value = value
+}
 
 
 const ripple = ref(false)
@@ -71,176 +387,83 @@ function clearRipple() {
   ripple.value = false
 }
 
-
-
 </script>
 
-<template>
- <header
-  :class="['shadow-sm fixed top-0 left-0 w-full z-50 bg-white  ', 
-     { 'slide-in': isScrolled, 'slide-out': !isScrolled }]"
->
-
-    <div class="container  mx-auto px-4 md:px-10 lg:px-26 py-4 flex justify-between items-center">
-      <div class="logo">
-        <router-link to="/">
-          <img
-            src="@/assets/images/logo-black.png"
-            alt="VP Media"
-            class="transition-transform duration-300"
-          />
-        </router-link>
-      </div>
-       
-      
-
-
-      <el-menu mode="horizontal" :ellipsis="false" class="hidden md:flex">
-        <el-menu-item index="1">
-          <router-link to="/" class="no-underline  hover:bg-transparent   text-gray-800">Trang chủ</router-link>
-        </el-menu-item>
-        <el-menu-item index="2">
-          <router-link to="/ve-chung-toi" class="no-underline hover:bg-transparent text-gray-800">Về chúng tôi</router-link>
-        </el-menu-item>
-        <el-sub-menu index="3">
-          <template #title>
-            <router-link to="/dich-vu" class="no-underline hover:bg-transparent text-gray-800">Dịch vụ</router-link>
-          </template>
-          <el-menu-item index="3-1">
-            <router-link to="/dich-vu" class="no-underline hover:bg-transparent text-gray-800">Tin nhắn SMS</router-link>
-          </el-menu-item>
-          <el-menu-item index="3-2">
-            <router-link to="/dichvu-cuoc-goi-thuong-hieu" class="no-underline hover:bg-transparent text-gray-800">Cuộc gọi thương hiệu</router-link>
-          </el-menu-item>
-          <el-menu-item index="3-3">
-            <router-link to="/dich-vu-GTVT" class="no-underline hover:bg-transparent text-gray-800">Dịch vụ GTGT</router-link>
-          </el-menu-item>
-          <el-menu-item index="3-4">
-            <router-link to="/dich-vu-ung-dung-games" class=" no-underline hover:bg-transparent  text-gray-800">Phát triển ứng dụng và games</router-link>
-          </el-menu-item>
-          <el-menu-item index="3-5">
-            <router-link to="/dich-vu-van-hanh" class=" no-underline hover:bg-transparent text-gray-800">Vận hành hệ thống</router-link>
-          </el-menu-item>
-        </el-sub-menu>
-
-        <el-sub-menu index="4">
-          <template #title>
-            <router-link to="/Giai-phap" class=" no-underline hover:bg-transparent text-gray-800">Giải Pháp</router-link>
-          </template>
-          <el-menu-item index="4-1">
-            <router-link to="/Giai-phap" class=" no-underline hover:bg-transparent text-gray-800">Tổng đài VoIP</router-link>
-          </el-menu-item>
-          <el-menu-item index="4-2">
-            <router-link to="/Giai-phat-tttn" class=" no-underline hover:bg-transparent text-gray-800">Tổng đài tin nhắn </router-link>
-          </el-menu-item>
-          <el-menu-item index="4-3">
-            <router-link to="/dich-vu-GTVT" class=" no-underline hover:bg-transparent text-gray-800">Thư điện tử </router-link>
-          </el-menu-item>
-        </el-sub-menu>
-
-        <el-menu-item index="5">
-          <router-link to="/lien-he" class="no-underline hover:bg-transparent text-gray-800">Tuyển dụng</router-link>
-        </el-menu-item>
-        <el-menu-item index="6">
-          <router-link to="/lien-he" class="no-underline hover:bg-transparent text-gray-800">Liên hệ</router-link>
-        </el-menu-item>
-      </el-menu>
- <button
-    ref="button"
-    class="relative overflow-hidden bg-[#142b73] text-white px-7 py-5  hover:text-white transition duration-300 border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)] hidden sm:block"
-    @mouseenter="startRipple"
-    @mousemove="updateRipple"
-    @mouseleave="clearRipple"
-  >
-    <span
-      v-if="ripple"
-      class="absolute bg-white/20 rounded-full pointer-events-none"
-      :style="rippleStyle"
-    ></span>
-    Hotline: +84(0) 902 825 586
-  </button>
-
-<el-dropdown  @command="changeLanguage">
-  <div class="flex items-center cursor-pointer text-gray-800">
-    <el-icon class="icon-black"><ChromeFilled /></el-icon>
-    <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
-    <el-icon class="ml-1 icon-black"><ArrowDown /></el-icon>
-  </div>
-  <template #dropdown>
-    <el-dropdown-menu>
-      <el-dropdown-item command="en">English</el-dropdown-item>
-      <el-dropdown-item command="vi">Tiếng Việt</el-dropdown-item>
-    </el-dropdown-menu>
-  </template>
-</el-dropdown>
-
-
-    </div> 
-  </header>
-</template>
 
 <style scoped>
-header {
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 0.9s cubic-bezier(0.77,0,0.18,1), opacity 0.9s cubic-bezier(0.77,0,0.18,1);
-}
-
-
-/* Khi cuộn xuống, header sẽ trượt xuống */
 .slide-in {
   transform: translateY(0%);
   opacity: 1;
+  transition: transform 0.7s cubic-bezier(0.77,0,0.18,1), opacity 0.7s cubic-bezier(0.77,0,0.18,1);
 }
 
-/* Khi cuộn lên, trượt lên trên */
 .slide-out {
   transform: translateY(-100%);
   opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.77,0,0.18,1), opacity 0.7s cubic-bezier(0.77,0,0.18,1);
 }
 
-.transition-all {
-  transition: all 0.4s ease-in-out;
+.dropdown-bridge::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  pointer-events: auto;
+  z-index: 1;
 }
 
-.fill-effect {
-  background-color: #142b73; /* màu gốc */
-  /* --fill-color: #2563eb;     màu hover: xanh nhạt hơn */
-  box-shadow: inset 0 0 0 0 var(--fill-color);
+/* Menu hover styles */
+.slide-down-enter-active, .slide-down-leave-active {
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.slide-down-enter-from, .slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+.slide-down-enter-to, .slide-down-leave-from {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* .fill-effect:hover {
-  box-shadow: inset 0 0 0 100px var(--fill-color);
-  color: white !important;
-  transition: box-shadow 0.9s ease-in-out;
-} */
-
-.icon-black {
-  color: black; /* Đổi màu biểu tượng thành đen */
+/* Dropdown menu styles */
+.dropdown-bridge ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-:deep(.el-menu-item),
-:deep(.el-menu-item:hover),
-:deep(.el-menu-item.is-active),
-:deep(.el-menu-item:focus),
-:deep(.el-menu-item.is-opened),
-:deep(.el-sub-menu__title),
-:deep(.el-sub-menu__title:hover),
-:deep(.el-sub-menu__title.is-active),
-:deep(.el-sub-menu__title.is-opened),
-:deep(.el-sub-menu.is-active),
-:deep(.el-sub-menu.is-opened) {
-  background-color: transparent !important;
-  color: #1f2937 !important; /* text-gray-800 */
-  text-decoration: none !important;
-  box-shadow: none !important;
-  outline: none !important;
- ext-decoration: none !important;
-  box-shadow: none !important;
+/* Reset router-link styles inside dropdowns */
+.dropdown-bridge ul li a {
+  text-decoration: none;
+  display: block;
 }
 
+/* Ripple span */
+button > span {
+  pointer-events: none;
+  border-radius: 50%;
+  position: absolute;
+  transform-origin: center;
+}
 
-
-
+@media (max-width: 1099px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: flex !important;
+  }
+}
+@media (min-width: 1100px) {
+  .desktop-only {
+    display: flex !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+}
 
 </style>

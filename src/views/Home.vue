@@ -8,16 +8,16 @@
   style="background: linear-gradient(to bottom, #021e7d 0%, #0573e4 100%)"
 >
 <!-- <div class="w-full mx-auto gap-10 items-center relative z-5 py-20  md:px-12 lg:px-24 flex flex-col md:flex-row"> -->
-
-  <div class=" container w-full mx-auto    gap-10 relative z-5  py-35  h-auto md:px-10 lg:px-25  flex flex-col md:flex-row   ">
     <ParticleBackground class="  inset-0 -z-10"/>
 
+  <div class=" container w-full mx-auto    gap-10 relative z-5  py-50  h-auto md:px-10 lg:px-26  flex flex-col md:flex-row   ">
+
     <!-- Left: Text Content  -->
-    <div class="space-y-6 flex flex-col px-4  justify-center"> 
-      <h1 class=" lg:text-5xl font-bold leading-tight  " style="line-height: 70px;"  >
+<div class="space-y-7 flex flex-col justify-center items-center text-center md:items-start md:text-left">
+      <h1 class=" text-2xl md:text-4xl lg:text-5xl  font-bold leading-tight  " style="line-height: 70px;"  >
         {{ $t('it_solution_heading') }}
       </h1>
-      <p class="  leading-relaxed text-white80">
+       <p class="leading-relaxed text-white max-w-3xl w-full ">
         {{ $t('it_solution_description') }}      </p>
   <div class="flex flex-wrap gap-6">
     <button 
@@ -176,9 +176,9 @@
 
 
   <!--nd3 --> 
-  <section class="applications py-20 md:px-10 lg:px-24">
-  <div class="container mx-auto w-full">
-    <h1 class="text-xl font-bold text-center text-orange-600 mb-4">
+  <section class="applications py-20  md:px-10 lg:px-24">
+  <div class="container mx-auto w-full lg:px-16">
+    <h1 class="text-xl font-bold text-center  text-orange-600 mb-4">
       {{ $t('applications.sectionTitle') }}
     </h1>
     <h2 class="text-4xl text-black font-bold text-center mb-8">
@@ -186,21 +186,24 @@
     </h2>
 
     <!-- Nút chọn ứng dụng -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-start gap-5 mb-10 w-full">
-      <el-button
-        v-for="(app, index) in applications"
-        :key="index"
-          :class="[
-        'px-10 py-5 text-lg font-semibold rounded-lg shadow-md transition-all',
-        selectedApp === index
-          ? 'bg-[#142b73] text-white'
-          : 'bg-gray-200 text-black hover:bg-[#142b73] hover:text-white',
-      ]"
-        @click="selectApp(index)"
-      >
-        {{ $t(`applications.apps[${index}].title`) }}
-      </el-button>
-    </div>
+   <div class="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-start gap-5 mb-10 w-full">
+  <el-button
+    v-for="(app, index) in applications"
+    :key="index"
+    :class="[
+      'rounded-lg shadow-md transition-all font-semibold',
+      selectedApp === index
+        ? 'bg-[#142b73] text-white'
+        : 'bg-gray-200 text-black hover:bg-[#142b73] hover:text-white',
+      'w-full sm:w-auto',
+      'px-8 py-5 sm:px-10 sm:py-6',
+       'text-base sm:text-lg',
+    ]"
+    @click="selectApp(index)"
+  >
+    {{ $t(`applications.apps[${index}].title`) }}
+  </el-button>
+</div>
 
     <transition name="slide-fade" mode="out-in">
       <div
@@ -268,9 +271,9 @@
       <div
         v-for="(logo, index) in logos"
         :key="index"
-        class="bg-white rounded-lg shadow-md p-4 flex items-center justify-center h-30 transition-transform hover:scale-105 w-250px "
+        class="bg-white rounded-lg shadow-md p-4 flex items-center justify-center h-25 transition-transform  w-250px "
       >
-        <img :src="logo" alt="Client Logo" class="max-h-20 max-w-full object-contain" />
+        <img :src="logo" alt="Client Logo" class="max-h-25 max-w-full object-contain" />
     </div>
 `   
     </div>
