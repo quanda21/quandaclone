@@ -38,20 +38,22 @@
         <form class="space-y-4 bg-white shadow-lg rounded-lg p-8 border-t-4 border-orange-500">
         
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input
-                type="text"
-                placeholder="Họ và tên"
-                class="w-full  py3 rounded-lg  outline-none  focus:ring-blue-900"
-                />
+     <input
+  type="text"
+  placeholder="Họ và tên"
+  class="w-full h-[55px] text-[16px] bg-white border border-l-[3px] border-l-[#142b73] border-t-white border-r-white border-b-white shadow-[0px_5px_30px_0px_rgba(148,146,245,0.15)] rounded-lg px-4 outline-none focus:ring-2"
+/>
+
             <input type="email" placeholder="Địa chỉ email" 
-            class="w-full  py3 rounded-lg  outline-none  focus:ring-blue-900" />
-            <input type="text" placeholder="Số điện thoại" 
-            class="w-full  py3 rounded-lg  outline-none  focus:ring-blue-900" />
-            <input type="text" placeholder="Tiêu đề"
-                class="w-full  py3 rounded-lg  outline-none  focus:ring-blue-900" />
-          </div>
+  class="w-full h-[55px] text-[16px] bg-white border border-l-[3px] border-l-[#142b73] border-t-white border-r-white border-b-white shadow-[0px_5px_30px_0px_rgba(148,146,245,0.15)] rounded-lg px-4 outline-none focus:ring-2"
+/>            <input type="text" placeholder="Số điện thoại" 
+  class="w-full h-[55px] text-[16px] bg-white border border-l-[3px] border-l-[#142b73] border-t-white border-r-white border-b-white shadow-[0px_5px_30px_0px_rgba(148,146,245,0.15)] rounded-lg px-4 outline-none focus:ring-2"
+/>            <input type="text" placeholder="Tiêu đề"
+  class="w-full h-[55px] text-[16px] bg-white border border-l-[3px] border-l-[#142b73] border-t-white border-r-white border-b-white shadow-[0px_5px_30px_0px_rgba(148,146,245,0.15)] rounded-lg px-4 outline-none focus:ring-2"
+/>          </div>
           <textarea placeholder="Nội dung" rows="5"
-                class="w-full  py3 rounded-lg  outline-none  focus:ring-blue-900"></textarea>
+                 class="w-full h-[55px] text-[16px] bg-white border border-l-[3px] border-l-[#142b73] border-t-white border-r-white border-b-white shadow-[0px_5px_30px_0px_rgba(148,146,245,0.15)] rounded-lg px-4 outline-none focus:ring-2"
+></textarea>
           <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800">
             Gửi
           </button>

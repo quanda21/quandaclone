@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="['fixed top-0 left-0 right-0 z-50 bg-white shadow-sm transition-transform duration-700', 
+    :class="['fixed top-0 left-0  right-0 z-50 bg-white shadow-sm transition-transform duration-700', 
       { 'slide-in': isScrolled, 'slide-out': !isScrolled }]"
   >
-    <div class="w-full container mx-auto px-4 md:px-10 lg:px-24 py-4 flex justify-between items-center">
+    <div class="w-full max-w-screen-xl  mx-auto px-4  md:px-7 lg:px-7 py-4 flex justify-between items-center">
 
       <div class="logo">
         <router-link to="/">
@@ -15,7 +15,7 @@
         </router-link>
       </div>
 
-    <nav class="desktop-only hidden md:flex justify-center items-center text-black uppercase" style="font-size: 16px;">
+    <nav class="desktop-only hidden md:flex flex-1 justify-center items-center text-black uppercase" style="font-size: 15px;">
         <ul class="flex space-x-6 list-none leading-tight">
           <li>
             <router-link to="/" class=" text-black font-600 hover:text-blue-700">{{ $t('home') }}</router-link>
@@ -55,22 +55,23 @@
           </li>
         </ul>
       </nav>
-<button
+      
+        <button
   ref="button"
-  class="desktop-only relative overflow-hidden bg-[#142b73] text-white px-7 py-5 hover:text-white transition duration-300 border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+  class=" desktop-only   inline-block relative  z-1 text-align-center overflow-hidden text-white bg-[#142b73] transition-400 border-none rounded-[3px] font-600 text-[17px] px-[35px] py-[15px] shadow-[0_7px_25px_rgba(123,104,238,0.25)]"
   @mouseenter="startRipple"
   @mousemove="updateRipple"
   @mouseleave="clearRipple"
 >
-        <span
-          v-if="ripple"
-          class="absolute bg-white/20 rounded-full pointer-events-none"
-          :style="rippleStyle"
-        ></span>
-        Hotline: +84(0) 902 825 586
-      </button>
-
-      <el-dropdown @command="changeLanguage" class="ml-4">
+  <span
+    v-if="ripple"
+    class="absolute bg-white/20 rounded-full pointer-events-none"
+    :style="rippleStyle"
+  ></span>
+  Hotline:+84(0) 902 825 586
+</button>
+   
+  <el-dropdown @command="changeLanguage" class="ml-1">
         <div class="flex items-center cursor-pointer text-black">
           <el-icon><ChromeFilled /></el-icon>
           <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
@@ -83,6 +84,9 @@
           </el-dropdown-menu>
         </template>
       </el-dropdown>
+
+    
+
 
 
 
@@ -409,7 +413,7 @@ function clearRipple() {
   top: 100%;
   left: 0;
   width: 100%;
-  height: 20px;
+  height: 25px;
   background: transparent;
   pointer-events: auto;
   z-index: 1;

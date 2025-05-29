@@ -2,119 +2,119 @@
 
 <template>
   <!--gt -->
-  <section
-  
-  class="relative w-full text-white  min-h-screen z-0 " 
-  style="background: linear-gradient(to bottom, #021e7d 0%, #0573e4 100%)"
->
-<!-- <div class="w-full mx-auto gap-10 items-center relative z-5 py-20  md:px-12 lg:px-24 flex flex-col md:flex-row"> -->
-    <ParticleBackground class="  inset-0 -z-10"/>
+   <section
+    class="relative z-0 w-full min-h-screen flex flex-wrap items-center justify-center text-white font-quicksand box-border"
+    style="background: linear-gradient(to bottom, #021e7d 0%, #0573e4 100%)"
+  >
+    <ParticleBackground class="absolute inset-0 -z-10" />
 
-  <div class=" container w-full mx-auto    gap-10 relative z-5  py-50  h-auto md:px-10 lg:px-26  flex flex-col md:flex-row   ">
+    <div class="flex flex-col md:flex-row items-center justify-center max-w-screen-xl mx-auto gap-12 py-50 px-4 relative z-5">
+      <!-- Left: Text Content -->
+      <div class="space-y-7 flex flex-col justify-center items-center text-center md:items-start md:text-left">
+        <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold  text-white" style="line-height: 70px;">
+          {{ $t('it_solution_heading') }}
+        </h1>
+        <p class="text-base text-white leading-[30px] max-w-3xl w-full">
+          {{ $t('it_solution_description') }}
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <button
+            class="relative overflow-hidden inline-block text-center font-semibold font-quicksand text-base leading-[24px] px-[35px] py-[14px] rounded shadow-[0_7px_25px_0_#7b68ee40] border-none bg-white text-[#142b73] mr-[20px]"
+            :class="hovered[0] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
+            @mouseenter="startRipple(0, $event)"
+            @mousemove="updateRipple(0, $event)"
+            @mouseleave="clearRipple(0)"
+          >
+            <span
+              v-if="ripple[0]"
+              class="absolute z-0 rounded-full pointer-events-none"
+              :style="rippleStyle[0]"
+            ></span>
+            <span class="relative z-10">{{ $t('services1') }}</span>
+          </button>
+          <button
+            class="relative overflow-hidden inline-block text-center font-semibold font-quicksand text-base leading-[24px] px-[35px] py-[14px] rounded shadow-[0_7px_25px_0_#7b68ee40] border-none bg-white text-[#142b73] mr-[20px]"
+            :class="hovered[1] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
+            @mouseenter="startRipple(1, $event)"
+            @mousemove="updateRipple(1, $event)"
+            @mouseleave="clearRipple(1)"
+          >
+            <span
+              v-if="ripple[1]"
+              class="absolute z-0 rounded-full pointer-events-none"
+              :style="rippleStyle[1]"
+            ></span>
+            <span class="relative z-10">{{ $t('contact_us') }}</span>
+          </button>
+        </div>
+      </div>
 
-    <!-- Left: Text Content  -->
-<div class="space-y-7 flex flex-col justify-center items-center text-center md:items-start md:text-left">
-      <h1 class=" text-2xl md:text-4xl lg:text-5xl  font-bold leading-tight  " style="line-height: 70px;"  >
-        {{ $t('it_solution_heading') }}
-      </h1>
-       <p class="leading-relaxed text-white max-w-3xl w-full ">
-        {{ $t('it_solution_description') }}      </p>
-  <div class="flex flex-wrap gap-6">
-    <button 
-      class="relative overflow-hidden w-40 h-12 font-bold border bg-white  transition-colors duration-500 rounded"
-      :class="hovered[0] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
-      @mouseenter="startRipple(0, $event)"
-      @mousemove="updateRipple(0, $event)"
-      @mouseleave="clearRipple(0)"
-    >
-      <span 
-        v-if="ripple[0]" 
-        class="absolute z-0 rounded-full pointer-events-none"
-        :style="rippleStyle[0]"
-      ></span>
-      <span class="relative z-10">{{ $t('services1') }}</span>
-    </button>
-    
-    <button 
-      class="relative overflow-hidden text-[#142b73] bg-white w-50 h-12 transition-colors duration-500 border-none rounded-lg"
-      :class="hovered[1] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
-      @mouseenter="startRipple(1, $event)"
-      @mousemove="updateRipple(1, $event)"
-      @mouseleave="clearRipple(1)"
-    >
-      <span 
-        v-if="ripple[1]" 
-        class="absolute z-0 bg-[#142b73] rounded-full pointer-events-none"
-        :style="rippleStyle[1]"
-      ></span>
-      <span class="relative z-10">{{ $t('contact_us') }}</span>
-    </button>
-  </div>
+      <!-- Right: Image -->
+      <div class="flex flex-col w-full">
+        <img
+          src="@/assets/images/home.png"
+          alt="Datacenter Illustration"
+          class="mx-auto w-full max-w-[600px] rounded md:max-w-lg h-auto text-center"
+        />
+      </div>
     </div>
-<!-- <Test /> -->
-    <!-- Right: Image -->
-<div class="flex flex-col w-full">
-  <img
-    src="@/assets/images/home.png"
-    alt="Datacenter Illustration"
-    class="mx-auto w-full max-w-xs sm:max-w-md md:max-w-lg h-auto"
-  />
-</div>
-    
-    
-  </div>
 
-  <!-- Background Shape -->
-  
-  <div  class="absolute bottom-0 left-0 w-full z-0"> 
-    <img
-  src="@/assets/images/home-wave-bg.svg"
-  alt="Background Wave"
-  class="w-full block "
-/>
+    <!-- Background Shape -->
+    <div class="absolute bottom-0 left-0 w-full z-0">
+      <img
+        src="@/assets/images/home-wave-bg.svg"
+        alt="Background Wave"
+        class="w-full block"
+      />
+    </div>
+  </section>
 
-</div>
-</section>
 
   
 <!--nd1 -->
-<section class="about py-20">
-  <div class="container mx-auto px-20 flex flex-col md:px-10 lg:px-25 md:flex-row">
-    <div class="md:w-1/2 flex flex-col justify-center">
-      <h2 class="text-lg text-blue-800 font-semibold tracking-wide uppercase">
-        {{ $t('about') }}
-      </h2>
-      <h3 class="text-5xl text-black font-bold mt-4 leading-tight">VPMEDIA</h3>
+  <section class="about py-20">
+    <div class="max-w-screen-xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-      <p class="mt-10 text-gray-600 text-lg leading-relaxed">
-        {{ $t('about_description') }}
-      </p>
-      <router-link
-        to="/ve-chung-toi"
-        class="bg-blue-900 text-white w-35 py-3 px-6 rounded hover:bg-blue-700 text-center mt-8 inline-block text-lg font-medium"
-      >
-        {{ $t('read_more') }}
-      </router-link>
-    </div>
-    <div class="md:w-1/2 md:pl-8 mt-8 md:mt-0 relative">
-      <img src="@/assets/images/about.jpg" alt="About Us" class="rounded shadow w-full" />
+      <!-- Left: Text Content -->
+      <div>
+        <h2 class="text-lg text-blue-800 font-semibold tracking-wide uppercase">
+          {{ $t('about') }}
+        </h2>
+        <h3 class="text-5xl text-black font-bold mt-4 leading-tight">VPMEDIA</h3>
 
-      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-        <div class="bg-white rounded-xl shadow-lg p-4 flex items-center gap-4 w-fit">
-          <img src="@/assets/images/about-sub.jpg" alt="Overlay Icon" class="w-16 h-16" />
-          <div>
-            <h3 class="text-3xl font-bold text-orange-600 leading-none">12</h3>
-            <span class="text-gray-600 text-sm">{{ $t('years_of_innovation') }}</span>
+        <p class="mt-10 text-gray-600 text-base leading-relaxed">
+          {{ $t('about_description') }}
+        </p>
+
+        <router-link
+          to="/ve-chung-toi"
+          class="bg-blue-900 text-white py-3 px-6 rounded hover:bg-blue-700 text-center mt-8 inline-block text-lg font-medium"
+        >
+          {{ $t('read_more') }}
+        </router-link>
+      </div>
+
+      <!-- Right: Image & Overlay -->
+      <div class="relative">
+        <img src="@/assets/images/about.jpg" alt="About Us" class="rounded shadow w-full" />
+
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+          <div class="bg-white rounded-xl shadow-lg p-4 flex items-center gap-4 w-fit">
+            <img src="@/assets/images/about-sub.jpg" alt="Overlay Icon" class="w-16 h-16" />
+            <div>
+              <h3 class="text-3xl font-bold text-orange-600 leading-none">12</h3>
+              <span class="text-gray-600 text-sm">{{ $t('years_of_innovation') }}</span>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
-  </div>
-</section>
+  </section>
   <!--nd2 -->
    
 <section class="serviece py-16 bg-gray-100">
-      <div class="container mx-auto px-4 md:px-10 lg:px-25">
+      <div class="max-w-screen-xl mx-auto mx-auto px-4 md:px-10 lg:px-10">
         <h1 class="text-xl font-bold text-center text-orange-600 mb-4">
           {{ $t('services.providedTitle') }}
         </h1>
@@ -176,8 +176,8 @@
 
 
   <!--nd3 --> 
-  <section class="applications py-20  md:px-10 lg:px-24">
-  <div class="container mx-auto w-full lg:px-16">
+  <section class="applications py-20  max-w-screen-xl mx-auto  md:px-10 lg:px-10">
+  <div class=" mx-auto  w-full ">
     <h1 class="text-xl font-bold text-center  text-orange-600 mb-4">
       {{ $t('applications.sectionTitle') }}
     </h1>
@@ -186,31 +186,33 @@
     </h2>
 
     <!-- Nút chọn ứng dụng -->
-   <div class="flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-start gap-5 mb-10 w-full">
-  <el-button
-    v-for="(app, index) in applications"
-    :key="index"
-    :class="[
-      'rounded-lg shadow-md transition-all font-semibold',
-      selectedApp === index
-        ? 'bg-[#142b73] text-white'
-        : 'bg-gray-200 text-black hover:bg-[#142b73] hover:text-white',
-      'w-full sm:w-auto',
-      'px-8 py-5 sm:px-10 sm:py-6',
-       'text-base sm:text-lg',
-    ]"
-    @click="selectApp(index)"
-  >
-    {{ $t(`applications.apps[${index}].title`) }}
-  </el-button>
+   <div class="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10 w-full">
+ <button
+  v-for="(app, index) in applications"
+  :key="index"
+  :class="[
+    'rounded-[6px]',
+    'shadow-[0_4px_10px_rgba(255,255,255,0.5)]',
+    'border-2 border-white',
+    selectedApp === index
+      ? 'bg-[#142b73] text-white'
+      : 'bg-white text-black hover:bg-[#142b73] hover:text-white',
+    'w-full',
+    'text-[15px] leading-[25.5px] text-center font-bold',
+    'px-[15px] py-[10px]',
+  ]"
+  @click="selectApp(index)"
+>
+  {{ $t(`applications.apps[${index}].title`) }}
+</button>
 </div>
 
-    <transition name="slide-fade" mode="out-in">
-      <div
-        v-if="selectedApp !== null"
-        :key="selectedApp"
-        class="grid grid-cols-1 md:grid-cols-2 gap-8"
-      >
+<transition :name="direction === 'up' ? 'slide-down' : 'slide-up'" mode="out-in">
+  <div
+    v-if="selectedApp !== null"
+    :key="selectedApp"
+    class="grid grid-cols-1 md:grid-cols-2 gap-8"
+  >
         <div>
           <h3 class="text-4xl font-bold text-black">
             {{ $t(`applications.apps[${selectedApp}].title`) }}
@@ -262,7 +264,7 @@
 
 
 <!--nd5 -->
-<section class="py-12 text-center bg-gray-50  ">
+<section class="py-12 text-center bg-gray-50   ">
     <p class="text-orange-500 font-semibold text-sm tracking-wider mb-2 ">
       {{ $t('clients.trustedBy') }}    </p>
     <h2 class="text-3xl font-bold text-blue-900 mb-10">{{ $t('clients.ourClients') }}</h2>
@@ -350,13 +352,13 @@ const applications = ref([
   },
 ]);
 
-const selectedApp = ref(0);
+const selectedApp = ref(0)
+const direction = ref('down')
 
-
-// chọn ứng dụng
 const selectApp = (index) => {
-  selectedApp.value = index;
-};
+  direction.value = index > selectedApp.value ? 'down' : 'up'
+  selectedApp.value = index
+}
 
 const ripple = ref([false, false])
 const rippleStyle = ref([{}, {}])

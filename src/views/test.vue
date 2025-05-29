@@ -1,18 +1,17 @@
 <template>
-   <div class="w-full   flex justify-between  py-4 px-4 md:px-10 lg:px-26  absolute top-0 left-0 right-0  z-16 h-auto bg-transparent">
+   <div class="w-full max-w-screen-xl mx-auto   flex justify-between  py-4 md:px-6 lg:px-5   absolute top-0 left-0 right-0  z-16 h-auto bg-transparent">
 
-    <div class="logo">
+    <div class=" ">
       <router-link to="/">
         <img
           src="@/assets/images/logo.png"
           alt="VP Media"
-          class="  container mx-auto transition-transform duration-300"
-        />
+   class="transition-transform duration-300"        />
       </router-link>
     </div>
     <!-- <ParticleBackground class= "z-10"/> -->
 
-    <nav class="hidden md:flex justify-center items-center text-slm  text-white   uppercase "  style="font-size: 16px;" >
+    <nav class="hidden md:flex flex-1 justify-center items-center  leading-[22.5px] text-left   text-white   uppercase  "  style="font-size: 15px;  " >
       <ul class="flex space-x-6 list-none    leading-tight  ">
         <li> 
           <router-link to="/" class="no-underline text-white font-600 ">{{ $t('home') }}</router-link>
@@ -57,20 +56,22 @@
                 Hotline: +84(0) 902 825 586
        </el-button> -->
        <!-- hiệu ứng ripple khi hover vào button -->
-       <button
-    ref="button"
-    class="relative overflow-hidden bg-[#142b73] text-white px-7 py-5  hover:text-white transition duration-300 border-none rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.2)] hidden sm:block"
-      @mouseenter="startRipple"
-    @mousemove="updateRipple"
-    @mouseleave="clearRipple"
-  >
-    <span
-      v-if="ripple"
-      class="absolute bg-white/20 rounded-full pointer-events-none"
-      :style="rippleStyle"
-    ></span>
-    Hotline: +84(0) 902 825 586
-  </button>
+ 
+
+   <button
+  ref="button"
+  class="inline-block relative z-1 text-center overflow-hidden text-white bg-[#142b73] transition-400 border-none rounded-[3px] font-600 text-[16px] px-[35px] py-[14px] shadow-[0_7px_25px_rgba(123,104,238,0.25)] hidden sm:block "
+  @mouseenter="startRipple"
+  @mousemove="updateRipple"
+  @mouseleave="clearRipple"
+>
+  <span
+    v-if="ripple"
+    class="absolute bg-white/20 rounded-full pointer-events-none"
+    :style="rippleStyle"
+  ></span>
+  Hotline: +84(0) 902 825 586
+</button>
 
     <el-dropdown  @command="changeLanguage">
     <div class="flex items-center cursor-pointer text-white">
