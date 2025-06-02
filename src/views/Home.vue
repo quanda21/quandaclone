@@ -8,7 +8,7 @@
   >
     <ParticleBackground class="absolute inset-0 -z-10" />
 
-    <div class="flex flex-col md:flex-row items-center justify-center max-w-screen-xl mx-auto gap-12 py-50 px-4 relative z-5">
+    <div class="flex flex-col md:flex-row items-center justify-center max-w-screen-xl  gap-12 py-50 px-4 relative z-5">
       <!-- Left: Text Content -->
       <div class="space-y-7 flex flex-col justify-center items-center text-center md:items-start md:text-left">
         <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold  text-white" style="line-height: 70px;">
@@ -113,7 +113,7 @@
   </section>
   <!--nd2 -->
    
-<section class="serviece py-16 bg-gray-100">
+<section class="serviece py-16 bg-white">
       <div class="max-w-screen-xl mx-auto mx-auto px-4 md:px-10 lg:px-10">
         <h1 class="text-xl font-bold text-center text-orange-600 mb-4">
           {{ $t('services.providedTitle') }}
@@ -125,7 +125,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-black">
           <!-- Service Card 1 -->
           <div class="service-card service-hover group">
-            <img src="@/assets/images/van-hanh-he-thong.png" alt="" class="w-15 h-15 transition-transform duration-300 transform group-hover:-scale-x-100">
+            <img src="@/assets/images/van-hanh-he-thong.png" alt="" class="w-50px h-63px transition-transform duration-300 transform group-hover:-scale-x-100">
             <h3 class="service-title">{{ $t('services.systemOperation.title') }}</h3>
             <p class="service-desc">{{ $t('services.systemOperation.desc') }}</p>
             <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
@@ -133,7 +133,7 @@
 
           <!-- Service Card 2 -->
           <div class="service-card service-hover group">
-            <img src="@/assets/images/tin-nhan-sms.png" alt="" class="w-15 h-15 mb-4 transition-transform duration-300 transform group-hover:-scale-x-100">
+            <img src="@/assets/images/tin-nhan-sms.png" alt="" class="w-50px h-63px mb-4 transition-transform duration-300 transform group-hover:-scale-x-100">
             <h3 class="service-title">{{ $t('services.sms.title') }}</h3>
             <p class="service-desc">{{ $t('services.sms.desc') }}</p>
             <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
@@ -176,7 +176,7 @@
 
 
   <!--nd3 --> 
-  <section class="applications py-20  max-w-screen-xl mx-auto  md:px-10 lg:px-10">
+  <section class="applications py-20  max-w-screen-xl mx-auto bg-#fafbfc  md:px-10 lg:px-10">
   <div class=" mx-auto  w-full ">
     <h1 class="text-xl font-bold text-center  text-orange-600 mb-4">
       {{ $t('applications.sectionTitle') }}
@@ -190,16 +190,20 @@
  <button
   v-for="(app, index) in applications"
   :key="index"
-  :class="[
-    'rounded-[6px]',
-    'shadow-[0_4px_10px_rgba(255,255,255,0.5)]',
-    'border-2 border-white',
+   :class="[
+    'rounded-[3px]',
+    'shadow-[0_5px_40px_0_rgba(0,0,0,0.11)]',
+    'text-[17px]',
+    'leading-[25.5px]',
+     'font-quicksand',
+    'font-bold',
+    'text-center',
+    'px-[15px] py-[12px]',
+    'w-full',
+    'border-none',
     selectedApp === index
       ? 'bg-[#142b73] text-white'
-      : 'bg-white text-black hover:bg-[#142b73] hover:text-white',
-    'w-full',
-    'text-[15px] leading-[25.5px] text-center font-bold',
-    'px-[15px] py-[10px]',
+     : 'bg-#fafbfc text-[#292a2c] hover:bg-[#142b73] hover:text-white',    'transition-all',
   ]"
   @click="selectApp(index)"
 >
@@ -247,7 +251,7 @@
 
 <!--nd4 -->
     <section
-    class="w-full bg-cover bg-center text-white  text-center py-20 px-4 bg-[#001d4c] bg-opacity-50 relative after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-0  "
+    class="w-full mb-12 bg-cover bg-center text-white  text-center py-20 px-4 bg-[#001d4c] bg-opacity-50 relative after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-0  "
       :style="`background-image: url(${bg})`"
       
       >
@@ -264,26 +268,25 @@
 
 
 <!--nd5 -->
-<section class="py-12 text-center bg-gray-50   ">
-    <p class="text-orange-500 font-semibold text-sm tracking-wider mb-2 ">
-      {{ $t('clients.trustedBy') }}    </p>
-    <h2 class="text-3xl font-bold text-blue-900 mb-10">{{ $t('clients.ourClients') }}</h2>
-   
-    <div class="flex flex-wrap justify-center gap-24px 2xl:px-250px">
-      <div
-        v-for="(logo, index) in logos"
-        :key="index"
-        class="bg-white rounded-lg shadow-md p-4 flex items-center justify-center h-25 transition-transform  w-250px "
-      >
-        <img :src="logo" alt="Client Logo" class="max-h-25 max-w-full object-contain" />
-    </div>
-`   
+  <section class="relative bg-[#fff] overflow-hidden z-1 pt-25 pb-17.5">
+    <div class="container">
+      <div class="max-md:mb-7.5 text-center mb-12.5 lh-normal">
+        <h6 class="text-16px font-700 text-[#ec5a26] tracking-0.5px uppercase">Được tin tưởng bởi nhiều khách hàng</h6>
+        <h2 class="text-35px font-900 text-[#0b0b31] [margin:10px_0_0_0] uppercase">Khách hàng của chúng tôi</h2>
+      </div>
+      <div class="flex flex-wrap mx--5px">
+        <div v-for="(logo, index) in logos" :key="index" class="partner-item">
+         <a href="#0" class="partner-logo flex items-center justify-center h-30">
+        <img :src="logo" alt="client logo" class="object-contain h-full max-h-full" />
+                     </a>
+        </div>
+      </div>
     </div>
   </section>
 
 </template>
 <script setup>
-
+import KHCCT from './KHCCT.vue';
 import ParticleBackground from '@/components/ParticleBackground.vue'
 
 import test from '@/views/test.vue'
