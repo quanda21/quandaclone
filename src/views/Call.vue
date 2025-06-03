@@ -1,7 +1,7 @@
 <template>
     <!-- Hero Section -->
      <section
-       class="w-full h-100 bg-cover bg-center text-white flex items-center justify-center"
+       class="w-full w-screen h-100 bg-cover bg-center text-white flex items-center justify-center"
        style="background-image: url('./src/assets/images/banner-bg.jpg');" >
 
     

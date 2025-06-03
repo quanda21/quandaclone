@@ -1,9 +1,9 @@
 <template>
   <div
-    :class="['fixed top-0 left-0  right-0 z-50 bg-white shadow-sm transition-transform duration-700', 
+    :class="['fixed top-0 left-0  right-0 z-50 bg-white shadow-sm  transition-transform duration-700', 
       { 'slide-in': isScrolled, 'slide-out': !isScrolled }]"
   >
-    <div class="w-full max-w-screen-xl  mx-auto px-4  md:px-7 lg:px-7 py-4 flex justify-between items-center">
+    <div class="w-full max-w-screen-2xl  mx-auto px-4  overflow-x-hidden md:px-7 lg:px-7 py-4 flex justify-between items-center">
 
       <div class="logo">
         <router-link to="/">
@@ -92,7 +92,7 @@
 
 
 <!-- Nút menu mobile -->
-<div class="mobile-only hidden items-center">
+<div class="mobile-only  items-center">
   <button
     @click="toggleMobileMenu"
     class="relative w-10 h-10 flex flex-col justify-center items-center focus:outline-none"
@@ -127,7 +127,7 @@
  <transition name="slide-down">
   <div
     v-if="mobileMenuOpen"
-    class="fixed top-[72px] left-1/2 z-50 w-[90vw] max-w-md -translate-x-1/2 bg-white rounded-xl shadow-lg border border-gray-200"
+    class="fixed top-[72px]  h-auto  left-1/2 z-50 w-[90vw] max-w-md -translate-x-1/2 bg-white rounded-xl shadow-lg border border-gray-200"
   >
     <ul class="divide-y divide-gray-200">
       <!-- Trang chủ -->
@@ -416,7 +416,7 @@ function clearRipple() {
   height: 25px;
   background: transparent;
   pointer-events: auto;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Menu hover styles */

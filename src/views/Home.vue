@@ -3,14 +3,14 @@
 <template>
   <!--gt -->
    <section
-    class="relative z-0 w-full min-h-screen flex flex-wrap items-center justify-center text-white font-quicksand box-border"
-    style="background: linear-gradient(to bottom, #021e7d 0%, #0573e4 100%)"
+  class="relative z-0 w-screen min-h-screen flex flex-wrap items-center justify-center text-white font-quicksand box-border overflow-x-hidden"
+  style="background: linear-gradient(to bottom, #021e7d 0%, #0573e4 100%)"
   >
     <ParticleBackground class="absolute inset-0 -z-10" />
 
-    <div class="flex flex-col md:flex-row items-center justify-center max-w-screen-xl  gap-12 py-50 px-4 relative z-5">
+    <div class="flex flex-col md:flex-row items-center justify-center max-w-screen-2xl    gap-12 py-50 px-4 relative z-5">
       <!-- Left: Text Content -->
-      <div class="space-y-7 flex flex-col justify-center items-center text-center md:items-start md:text-left">
+      <div class="space-y-7 flex flex-col justify-center items-center text-center  md:items-start md:text-left">
         <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold  text-white" style="line-height: 70px;">
           {{ $t('it_solution_heading') }}
         </h1>
@@ -73,7 +73,7 @@
   
 <!--nd1 -->
   <section class="about py-20">
-    <div class="max-w-screen-xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-screen-2xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
       <!-- Left: Text Content -->
       <div>
@@ -114,7 +114,7 @@
   <!--nd2 -->
    
 <section class="serviece py-16 bg-white">
-      <div class="max-w-screen-xl mx-auto mx-auto px-4 md:px-10 lg:px-10">
+      <div class="max-w-screen-2xl mx-auto mx-auto px-4 md:px-10 lg:px-10">
         <h1 class="text-xl font-bold text-center text-orange-600 mb-4">
           {{ $t('services.providedTitle') }}
         </h1>
@@ -176,7 +176,7 @@
 
 
   <!--nd3 --> 
-  <section class="applications py-20  max-w-screen-xl mx-auto bg-#fafbfc  md:px-10 lg:px-10">
+  <section class="applications py-20  max-w-screen-2xl mx-auto bg-#fafbfc  md:px-10 lg:px-10">
   <div class=" mx-auto  w-full ">
     <h1 class="text-xl font-bold text-center  text-orange-600 mb-4">
       {{ $t('applications.sectionTitle') }}
@@ -274,7 +274,7 @@
         <h6 class="text-16px font-700 text-[#ec5a26] tracking-0.5px uppercase">Được tin tưởng bởi nhiều khách hàng</h6>
         <h2 class="text-35px font-900 text-[#0b0b31] [margin:10px_0_0_0] uppercase">Khách hàng của chúng tôi</h2>
       </div>
-      <div class="flex flex-wrap mx--5px">
+      <div class="flex flex-wrap mx-auto  items-center">
         <div v-for="(logo, index) in logos" :key="index" class="partner-item">
          <a href="#0" class="partner-logo flex items-center justify-center h-30">
         <img :src="logo" alt="client logo" class="object-contain h-full max-h-full" />
@@ -286,7 +286,6 @@
 
 </template>
 <script setup>
-import KHCCT from './KHCCT.vue';
 import ParticleBackground from '@/components/ParticleBackground.vue'
 
 import test from '@/views/test.vue'

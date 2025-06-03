@@ -1,5 +1,5 @@
 <template>
-   <div class="w-full max-w-screen-xl mx-auto   flex justify-between  py-4 md:px-6 lg:px-5   absolute top-0 left-0 right-0  z-16 h-auto bg-transparent">
+   <div class="w-full max-w-screen-2xl mx-auto   flex justify-between  py-4 md:px-6 lg:px-5   absolute top-0 left-0 right-0  z-16 h-auto bg-transparent">
 
     <div class=" ">
       <router-link to="/">
