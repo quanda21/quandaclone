@@ -3,7 +3,7 @@
     :class="['fixed top-0 left-0  right-0 z-50 bg-white shadow-sm  transition-transform duration-700', 
       { 'slide-in': isScrolled, 'slide-out': !isScrolled }]"
   >
-    <div class="w-full max-w-screen-2xl  mx-auto px-4  overflow-x-hidden md:px-7 lg:px-7 py-4 flex justify-between items-center">
+    <div class="w-full max-w-screen-2xl  mx-auto px-4   md:px-7 lg:px-7 py-4 flex justify-between items-center">
 
       <div class="logo">
         <router-link to="/">
@@ -15,7 +15,7 @@
         </router-link>
       </div>
 
-    <nav class="desktop-only hidden md:flex flex-1 justify-center items-center text-black uppercase" style="font-size: 15px;">
+    <nav class="desktop-only hidden md:flex flex-1 justify-center items-center text-base text-black uppercase" style="font-size: 15px;">
         <ul class="flex space-x-6 list-none leading-tight">
           <li>
             <router-link to="/" class=" text-black font-600 hover:text-blue-700">{{ $t('home') }}</router-link>
