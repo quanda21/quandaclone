@@ -5,11 +5,11 @@ import { defineConfig, presetUno } from 'unocss'
 export default defineConfig({
   shortcuts: {
     // Service card
-    'service-card': 'p-6 bg-white shadow rounded',
-    'service-title': 'text-xl font-semibold mt-4',
+'service-card': 'p-6 bg-[#fff] shadow-lg rounded-xl leading-[24px] mt-[30px] px-[30px] py-[35px]',
+    'service-title': 'text-xl font-bold mt-4',
     'service-desc': 'mt-2 text-gray-600',
-    'service-link': 'text-blue-800 mt-4 block underline',
-    'hover-imae': 'transition-transform duration-300 transform group-hover:-scale-x-100',
+    'service-link': 'text-blue-800 mt-4 block underline font-bold',
+    'imae': 'inline w-[50px] h-[50px] m-[0_0_15px_0] transition-transform duration-300 transform group-hover:-scale-x-100 ',
     'service-hover': 'group relative overflow-hidden p-6 rounded-xl transition-all hover:-translate-y-2',
 
 

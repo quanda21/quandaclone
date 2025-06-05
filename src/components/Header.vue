@@ -56,6 +56,8 @@
         </ul>
       </nav>
       
+
+       <div class="flex items-center gap-x-6"> 
         <button
   ref="button"
   class=" desktop-only   inline-block relative  z-1 text-align-center overflow-hidden text-white bg-[#142b73] transition-400 border-none rounded-[3px] font-600 text-[17px] px-[35px] py-[15px] shadow-[0_7px_25px_rgba(123,104,238,0.25)]"
@@ -86,7 +88,7 @@
       </el-dropdown>
 
     
-
+</div>
 
 
 

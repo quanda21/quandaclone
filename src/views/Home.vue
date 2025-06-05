@@ -8,18 +8,18 @@
   >
     <ParticleBackground class="absolute inset-0 -z-10" />
 
-    <div class="flex flex-col md:flex-row items-center justify-center max-w-screen-2xl    gap-12 py-50 px-4 relative z-5">
+    <div class="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl    gap-12 py-50 px-8 relative z-5">
       <!-- Left: Text Content -->
-      <div class="space-y-7 flex flex-col justify-center items-center text-center  md:items-start md:text-left">
-        <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold  text-white" style="line-height: 70px;">
+      <div class="space-y-7 flex flex-col justify-center items-center text-center  lg:items-start lg:text-left">
+        <h1 class="text-[50px]  font-bold  text-white" style="line-height: 70px;">
           {{ $t('it_solution_heading') }}
         </h1>
         <p class="text-base text-white leading-[30px] max-w-3xl w-full">
           {{ $t('it_solution_description') }}
         </p>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex    gap-2">
           <button
-            class="relative overflow-hidden inline-block text-center font-semibold font-quicksand text-base leading-[24px] px-[35px] py-[14px] rounded shadow-[0_7px_25px_0_#7b68ee40] border-none bg-white text-[#142b73] mr-[20px]"
+            class="relative overflow-hidden inline-block text-center font-semibold font-quicksand text-base leading-[24px] px-[20px] py-[10px] rounded shadow-[0_7px_25px_0_#7b68ee40] border-none bg-white text-[#142b73] mr-[20px]"
             :class="hovered[0] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
             @mouseenter="startRipple(0, $event)"
             @mousemove="updateRipple(0, $event)"
@@ -73,16 +73,17 @@
   
 <!--nd1 -->
   <section class="about py-20">
-    <div class="max-w-screen-2xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div class="max-w-screen-2xl mx-auto px-4 md:px-8 grid  grid-cols-1  lg:grid-cols-2 gap-10 items-center">
 
       <!-- Left: Text Content -->
       <div>
-        <h2 class="text-lg text-blue-800 font-semibold tracking-wide uppercase">
+        <h2 class="text-lg text-blue-800 font-semibold tracking-[0.3px] uppercase">
           {{ $t('about') }}
         </h2>
-        <h3 class="text-5xl text-black font-bold mt-4 leading-tight">VPMEDIA</h3>
+        <h3 class="text-4xl text-black font-bold mt-4 leading-tight">VPMEDIA</h3>
 
-        <p class="mt-10 text-gray-600 text-base leading-relaxed">
+        <p class="mt-10 text-gray-600 text-base  leading-[28.8px] tracking-[0.3px]">
+          {{ $t('about_subtitle') }}
           {{ $t('about_description') }}
         </p>
 
@@ -99,7 +100,7 @@
         <img src="@/assets/images/about.jpg" alt="About Us" class="rounded shadow w-full" />
 
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-          <div class="bg-white rounded-xl shadow-lg p-4 flex items-center gap-4 w-fit">
+          <div class="bg-white rounded-xl shadow-lg p-2 flex items-center gap-4 w-fit">
             <img src="@/assets/images/about-sub.jpg" alt="Overlay Icon" class="w-16 h-16" />
             <div>
               <h3 class="text-3xl font-bold text-orange-600 leading-none">12</h3>
@@ -113,7 +114,7 @@
   </section>
   <!--nd2 -->
    
-<section class="serviece py-16 bg-white">
+<section class="serviece py-16 bg-[#fafbfc]">
       <div class="max-w-screen-2xl mx-auto mx-auto px-4 md:px-10 lg:px-10">
         <h1 class="text-xl font-bold text-center text-orange-600 mb-4">
           {{ $t('services.providedTitle') }}
@@ -122,18 +123,22 @@
           {{ $t('services.mainTitle') }}
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-black">
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-black  md:mt-5 ">
           <!-- Service Card 1 -->
-          <div class="service-card service-hover group">
-            <img src="@/assets/images/van-hanh-he-thong.png" alt="" class="w-50px h-63px transition-transform duration-300 transform group-hover:-scale-x-100">
-            <h3 class="service-title">{{ $t('services.systemOperation.title') }}</h3>
-            <p class="service-desc">{{ $t('services.systemOperation.desc') }}</p>
-            <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
-          </div>
+         <div class="service-card service-hover group text-left  ">
+              <img
+                src="@/assets/images/van-hanh-he-thong.png"
+                alt=""
+             class="'inline w-[50px] h-[50px] m-[0_0_15px_0] transition-transform duration-300 transform group-hover:-scale-x-100 ">
+              <h3 class="service-title">{{ $t('services.systemOperation.title') }}</h3>
+              <p class="service-desc">{{ $t('services.systemOperation.desc') }}</p>
+              <a href="#" class="service-link font-bold inline-block">{{ $t('services.details') }}</a>
+            </div>
 
           <!-- Service Card 2 -->
           <div class="service-card service-hover group">
-            <img src="@/assets/images/tin-nhan-sms.png" alt="" class="w-50px h-63px mb-4 transition-transform duration-300 transform group-hover:-scale-x-100">
+            <img src="@/assets/images/tin-nhan-sms.png" alt=""
+            class="'inline w-[50px] h-[50px] m-[0_0_15px_0] transition-transform duration-300 transform group-hover:-scale-x-100 ">            
             <h3 class="service-title">{{ $t('services.sms.title') }}</h3>
             <p class="service-desc">{{ $t('services.sms.desc') }}</p>
             <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
@@ -141,15 +146,17 @@
 
           <!-- Service Card 3 -->
           <div class="service-card service-hover group">
-            <img src="@/assets/images/cuoc-goi-thuong-hieu.png" alt="" class="w-15 h-15 mb-4 transition-transform duration-300 transform group-hover:-scale-x-100">
+            <img src="@/assets/images/cuoc-goi-thuong-hieu.png" alt="" 
+             class="'inline w-[50px] h-[50px] m-[0_0_15px_0] transition-transform duration-300 transform group-hover:-scale-x-100 ">
             <h3 class="service-title">{{ $t('services.voiceBrand.title') }}</h3>
             <p class="service-desc">{{ $t('services.voiceBrand.desc') }}</p>
-            <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
+            <a href="#" class="service-link inline-block  ">{{ $t('services.details') }}</a>
           </div>
 
           <!-- Service Card 4 -->
           <div class="service-card service-hover group">
-            <img src="@/assets/images/dich-vu-gia-tri-gia-tang.png" alt="" class="w-15 h-15 mb-4 transition-transform duration-300 transform group-hover:-scale-x-100">
+            <img src="@/assets/images/dich-vu-gia-tri-gia-tang.png" alt="" 
+             class="'inline w-[50px] h-[50px] m-[0_0_15px_0] transition-transform duration-300 transform group-hover:-scale-x-100 ">
             <h3 class="service-title">{{ $t('services.vas.title') }}</h3>
             <p class="service-desc">{{ $t('services.vas.desc') }}</p>
             <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
@@ -157,7 +164,8 @@
 
           <!-- Service Card 5 -->
           <div class="service-card service-hover group">
-            <img src="@/assets/images/phat-trien-ung-dung-va-games.png" alt="" class="w-15 h-15 mb-4 transition-transform duration-300 transform group-hover:-scale-x-100">
+            <img src="@/assets/images/phat-trien-ung-dung-va-games.png" alt="" 
+             class="'inline w-[50px] h-[50px] m-[0_0_15px_0] transition-transform duration-300 transform group-hover:-scale-x-100 ">
             <h3 class="service-title">{{ $t('services.devGames.title') }}</h3>
             <p class="service-desc">{{ $t('services.devGames.desc') }}</p>
             <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
@@ -165,7 +173,8 @@
 
           <!-- Service Card 6 -->
           <div class="service-card service-hover group">
-            <img src="@/assets/images/giai-phap-tong-dai.png" alt="" class="w-15 h-15 mb-4 transition-transform duration-300 transform group-hover:-scale-x-100">
+            <img src="@/assets/images/giai-phap-tong-dai.png" alt=""
+             class="'inline w-[50px] h-[50px] m-[0_0_15px_0] transition-transform duration-300 transform group-hover:-scale-x-100 ">
             <h3 class="service-title">{{ $t('services.voip.title') }}</h3>
             <p class="service-desc">{{ $t('services.voip.desc') }}</p>
             <a href="#" class="service-link inline-block">{{ $t('services.details') }}</a>
@@ -215,33 +224,52 @@
   <div
     v-if="selectedApp !== null"
     :key="selectedApp"
-    class="grid grid-cols-1 md:grid-cols-2 gap-8"
+    class="grid grid-cols-1 lg:grid-cols-2 gap-6"
   >
         <div>
-          <h3 class="text-4xl font-bold text-black">
+          <h3 class="text-4xl  font-bold  text-black">
             {{ $t(`applications.apps[${selectedApp}].title`) }}
           </h3>
-          <p class="mt-4 text-gray-600">
+          <p class="mt-4 leading-[28.8px] tracking-[0.3px] text-gray-600">
             {{ $t(`applications.apps[${selectedApp}].description`) }}
           </p>
-          <ul class="mt-4 text-gray-600">
-            <li
-              v-for="(feature, index) in applications[selectedApp].features"
-              :key="index"
-            >
-              ✔ {{ $t(`applications.apps[${selectedApp}].features[${index}]`) }}
-            </li>
-          </ul>
+                <ul class="mt-4 text-gray-600 text-left ml--8 space-y-2">
+                  <li class="flex items-center gap-2">
+                    <span class="bg-[#002D7E] text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                      <font-awesome-icon icon="check" />
+                    </span>
+                    {{ $t(`applications.apps[${selectedApp}].features`) }}
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="bg-[#002D7E] text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                      <font-awesome-icon icon="check" />
+                    </span>
+                    {{ $t(`applications.apps[${selectedApp}].a`) }}
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="bg-[#002D7E] text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                      <font-awesome-icon icon="check" />
+                    </span>
+                    {{ $t(`applications.apps[${selectedApp}].b`) }}
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="bg-[#002D7E] text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+                      <font-awesome-icon icon="check" />
+                    </span>
+                    {{ $t(`applications.apps[${selectedApp}].c`) }}
+                  </li>
+                </ul>
+
           <p class="mt-4 text-gray-600">
             {{ $t(`applications.apps[${selectedApp}].titles`) }}
           </p>
           <a href="#" class="text-orange-500 mt-4">{{ $t('read_more') }}</a>
         </div>
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center items-center w-full mx-auto"> ">
           <img
             :src="applications[selectedApp].image"
             alt="App Image"
-            class="rounded shadow w-3/4 md:w-2/3"
+            class="rounded shadow w-full h-full "
           />
         </div>
       </div>
@@ -251,18 +279,30 @@
 
 <!--nd4 -->
     <section
-    class="w-full mb-12 bg-cover bg-center text-white  text-center py-20 px-4 bg-[#001d4c] bg-opacity-50 relative after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-0  "
+    class="w-full  max-w-screen-4xl mx-auto mb-12 bg-cover bg-center text-white  text-center py-20 px-4 bg-[#001d4c] bg-opacity-50 relative after:content-[''] after:absolute after:inset-0 after:bg-black/50 after:z-0  "
       :style="`background-image: url(${bg})`"
       
       >
     <div class="relative z-1">
-      <p class="text-orange-500 font-semibold mb-2">{{ $t('collaboration.title') }}</p>
-    <h2 class="text-2xl md:text-4xl font-bold mb-4">{{ $t('collaboration.heading') }}</h2>
-    <p class="max-w-3xl mx-auto mb-6 leading-relaxed">
-      {{ $t('collaboration.description') }}    </p>
-    <button class="bg-white text-blue-800 font-semibold px-6 py-2 rounded border border-white hover:bg-blue-100">
-      {{ $t('collaboration.button') }}
-    </button>
+      <p class="text-orange-500 font-700  mb-2">{{ $t('collaboration.title') }}</p>
+    <h2 class="text-4xl md:text-4xl font-bold mb-4">{{ $t('collaboration.heading') }}</h2>
+      <p class="text-white font-quicksand text-[19px] leading-[32px] tracking-[0.3px] my-5 text-center mx-auto max-w-4xl">
+        {{ $t('collaboration.description') }}
+      </p>
+  <button
+  class="relative overflow-hidden inline-block text-center font-semibold font-quicksand text-base leading-[24px] px-[35px] py-[14px] rounded-[3px] shadow-[0_7px_25px_0_#7b68ee40] border-none bg-white text-[#142b73] mr-[20px]"
+  :class="hovered[3] ? 'text-white bg-[#142b73]' : 'text-[#142b73] bg-white'"
+  @mouseenter="startRipple(3, $event)"
+  @mousemove="updateRipple(3, $event)"
+  @mouseleave="clearRipple(3)"
+>
+  <span
+    v-if="ripple[3]"
+    class="absolute z-0 rounded-full pointer-events-none"
+    :style="rippleStyle[3]"
+  ></span>
+  <span class="relative z-10">{{ $t('collaboration.button') }}</span>
+</button>
     </div>
   </section>
 
@@ -340,6 +380,7 @@ const particlesOptions = ref({
 
 // Danh sách ứng dụng
 const applications = ref([
+  
   {
     image: './src/assets/images/vbot.png',
   },
@@ -354,6 +395,8 @@ const applications = ref([
   },
 ]);
 
+
+
 const selectedApp = ref(0)
 const direction = ref('down')
 
@@ -362,9 +405,9 @@ const selectApp = (index) => {
   selectedApp.value = index
 }
 
-const ripple = ref([false, false])
-const rippleStyle = ref([{}, {}])
-const hovered = ref([false, false])
+const ripple = ref([false, false, false])
+const rippleStyle = ref([{}, {}, {}])
+const hovered = ref([false, false, false])
 
 function startRipple(index, event) {
   const button = event.currentTarget

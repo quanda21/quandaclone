@@ -1,5 +1,5 @@
 <template>
-   <div class="w-full max-w-screen-2xl mx-auto   flex justify-between  py-4 md:px-6 lg:px-5   absolute top-0 left-0 right-0  z-16 h-auto bg-transparent">
+   <div class="w-full max-w-screen-2xl mx-auto   flex justify-between  py-4 md:px-6 lg:px-7   absolute top-0 left-0 right-0  z-16 h-auto bg-transparent">
 
     <div class=" ">
       <router-link to="/">
@@ -20,7 +20,7 @@
           <router-link to="/ve-chung-toi" class="no-underline text-white font-600 ">{{ $t('about') }}</router-link>
         </li>
         <li class="relative group dropdown-bridge">
-  <router-link to="/dich-vu" class="no-underline text-white font-600">
+  <router-link to="/" class="no-underline text-white font-600">
     {{ $t('se') }}
     <el-icon><ArrowDown /></el-icon>
   </router-link>
@@ -57,40 +57,51 @@
        </el-button> -->
        <!-- hiệu ứng ripple khi hover vào button -->
  
-
-   <button
-  ref="button"
-  class="inline-block relative z-1 text-center overflow-hidden text-white bg-[#142b73] transition-400 border-none rounded-[3px] font-600 text-[16px] px-[35px] py-[14px] shadow-[0_7px_25px_rgba(123,104,238,0.25)] hidden sm:block "
-  @mouseenter="startRipple"
-  @mousemove="updateRipple"
-  @mouseleave="clearRipple"
->
-  <span
-    v-if="ripple"
-    class="absolute bg-white/20 rounded-full pointer-events-none"
-    :style="rippleStyle"
-  ></span>
-  Hotline: +84(0) 902 825 586
-</button>
-
-    <el-dropdown  @command="changeLanguage">
-    <div class="flex items-center cursor-pointer text-white">
+ <div class="flex items-center gap-x-6">
+  <button
+    ref="button"
+    class="inline-block relative z-1 text-center overflow-hidden text-white bg-[#142b73] transition-400 border-none rounded-[3px] font-600 text-[16px] px-[35px] py-[14px] shadow-[0_7px_25px_rgba(123,104,238,0.25)] hidden lg:block"
+    @mouseenter="startRipple"
+    @mousemove="updateRipple"
+    @mouseleave="clearRipple"
+  >
+    <span
+      v-if="ripple"
+      class="absolute bg-white/20 rounded-full pointer-events-none"
+      :style="rippleStyle"
+    ></span>
+    Hotline: +84(0) 902 825 586
+  </button>
+ 
+  <!-- Dropdown ngôn ngữ tự làm -->
+  <div class="relative group dropdown-bridge sm:grid-cols-2" @mouseleave="showLang = false"  >
+    <button
+      class="flex items-center cursor-pointer text-white mx-auto py-[14px] rounded bg-[#142b73] hover:bg-blue-700 border-none  transition-400 shadow-[0_7px_25px_rgba(123,104,238,0.25)] "
+      @mouseenter="showLang = true"
+      @click="showLang = !showLang"
+      type="button"
+    >
       <el-icon><ChromeFilled /></el-icon>
-            <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
+      <span class="ml-1">{{ currentLocale.toUpperCase() }}</span>
       <el-icon class="ml-1"><ArrowDown /></el-icon>
+    </button>
+    <div
+      v-if="showLang"
+      class="absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg z-50"
+    >
+      <div
+        class="px-4 py-2 hover:bg-blue-100 cursor-pointer text-black rounded-t-lg"
+        @click="setLang('vi')"
+      >Tiếng Việt</div>
+      <div
+        class="px-4 py-2 hover:bg-blue-100 cursor-pointer text-black rounded-b-lg"
+        @click="setLang('en')"
+      >Tiếng Anh</div>
     </div>
+  </div>
+</div>
 
-    <template #dropdown>
-      <el-dropdown-menu class="bg-white text-black rounded-lg ">
-        <el-dropdown-item command="vi" >
-           Tiếng Việt
-        </el-dropdown-item>
-        <el-dropdown-item command="en"  >
-           Tiếng Anh
-        </el-dropdown-item>
-      </el-dropdown-menu>
-    </template>
-  </el-dropdown>
+
   </div>
 
 
@@ -106,11 +117,13 @@ import { ChromeFilled, ArrowDown } from '@element-plus/icons-vue'
 
 
 const { locale } = useI18n();
-const currentLocale = ref(locale.value);
+const currentLocale = ref(locale.value)
+const showLang = ref(false)
 
-function changeLanguage(value) {
-  locale.value = value;
-  currentLocale.value = value;
+function setLang(lang) {
+  locale.value = lang
+  currentLocale.value = lang
+  showLang.value = false
 }
 
 const ripple = ref(false)

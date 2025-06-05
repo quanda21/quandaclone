@@ -13,6 +13,14 @@ import i18n from './i18n.js'
 
 
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+// Thêm tất cả solid icons
+library.add(fas)
+
+
 
 const app = createApp(App)
 
@@ -25,7 +33,7 @@ const particlesInit = async (engine) => {
   app.use(Particles, { particlesInit });
  app.use(router)
  app.use(i18n)
-
+app.component('font-awesome-icon', FontAwesomeIcon)
 app.mount('#app')
 
 

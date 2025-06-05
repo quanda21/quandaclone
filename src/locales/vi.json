@@ -70,43 +70,43 @@
       {
         "title": "VBot - Tổng đài AI đa tính năng",
         "description": "VBot là giải pháp tổng đài AI thông minh, giúp doanh nghiệp tự động hóa chăm sóc khách hàng, tối ưu quy trình giao tiếp và nâng cao trải nghiệm người dùng. Với công nghệ AI tiên tiến, VBot có thể xử lý cuộc gọi, phản hồi tin nhắn và hỗ trợ khách hàng 24/7.",
-        "features": [
+        "features":
           "Tự động hóa tổng đài với AI, giảm thiểu chi phí vận hành",
-          "Hỗ trợ đa kênh: thoại, SMS, chatbot, tích hợp với CRM",
-          "Cung cấp báo cáo, phân tích dữ liệu và tối ưu hiệu suất tổng đài",
-          "SDK linh hoạt, dễ dàng tích hợp vào ứng dụng và hệ thống của doanh nghiệp"
-        ],
+         "a": "Hỗ trợ đa kênh: thoại, SMS, chatbot, tích hợp với CRM",
+         "b" :"Cung cấp báo cáo, phân tích dữ liệu và tối ưu hiệu suất tổng đài",
+          "c" : "SDK linh hoạt, dễ dàng tích hợp vào ứng dụng và hệ thống của doanh nghiệp",
+        
         "titles": "Với khả năng linh hoạt, dễ dàng tùy chỉnh và tích hợp thông qua SDK mạnh mẽ, VBot là giải pháp hoàn hảo giúp doanh nghiệp nâng cao chất lượng dịch vụ khách hàng và tối ưu hiệu quả hoạt động."
       },
       {
         "title": "VScan - Ứng dụng quét tài liệu",
         "description": "VScan là ứng dụng quét tài liệu mạnh mẽ, giúp bạn chuyển đổi giấy tờ, hợp đồng, hóa đơn và nhiều loại tài liệu khác sang định dạng kỹ thuật số một cách nhanh chóng và chính xác. Với công nghệ nhận diện ký tự quang học (OCR) tiên tiến, VScan giúp bạn lưu trữ, tìm kiếm và chia sẻ tài liệu dễ dàng.",
-        "features": [
-          "Phân tích dữ liệu tài chính",
-          "Báo cáo chi tiết và trực quan",
-          "Tích hợp dễ dàng với hệ thống hiện tại"
-        ],
+        "features":
+          " Quét tài liệu nhanh chóng với chất lượng hình ảnh sắc nét",
+       "a":   " Công nghệ OCR nhận diện và chuyển đổi văn bản chính xác",
+        "b":  " Hỗ trợ nhiều định dạng lưu trữ: PDF, JPG, PNG",
+        "c": "Dễ dàng chia sẻ tài liệu qua email, cloud hoặc các ứng dụng khác",
         "titles": "Với VScan, bạn có thể số hóa tài liệu một cách tiện lợi, tiết kiệm thời gian và nâng cao hiệu suất làm việc."
       },
       {
         "title": "Văn phòng điện tử",
         "description": "VOffice là giải pháp văn phòng điện tử giúp doanh nghiệp số hóa quy trình làm việc, quản lý tài liệu, điều hành công việc và tối ưu hiệu suất làm việc. Với giao diện thân thiện và hệ thống thông minh, VOffice giúp kết nối nhân sự, giảm thiểu thủ tục giấy tờ và nâng cao hiệu quả quản lý.",
-        "features": [
+        "features": 
           "Quản lý tài liệu thông minh",
-          "Tích hợp lịch làm việc và nhắc nhở",
-          "Bảo mật dữ liệu cao"
-        ],
+         "a": "Tích hợp lịch làm việc và nhắc nhở",
+         "b": "Bảo mật dữ liệu cao"
+        ,
+           "c": "Dễ dàng chia sẻ tài liệu qua email, cloud hoặc các ứng dụng khác",
         "titles": "Với VOffice, doanh nghiệp có thể hiện đại hóa mô hình làm việc, tiết kiệm thời gian và nâng cao năng suất lao động."
       },
       {
         "title": "Golden Health",
         "description": "Golden Health là ứng dụng chăm sóc sức khỏe cá nhân, giúp người dùng theo dõi và quản lý sức khỏe một cách hiệu quả. Với các tính năng thông minh, Golden Health hỗ trợ người dùng theo dõi nhịp tim, huyết áp, cân nặng và các chỉ số sức khỏe quan trọng khác.",
-        "features": [
+        "features": 
           "Theo dõi nhịp tim, huyết áp, cân nặng và các chỉ số sức khỏe quan trọng",
-          "Ghi chép nhật ký sức khỏe và quá trình điều trị",
-          "Nhắc nhở uống thuốc, lịch khám bệnh và tập luyện",
-          "Phân tích sức khỏe và đề xuất cải thiện thể trạng"
-        ],
+       "a":   "Ghi chép nhật ký sức khỏe và quá trình điều trị",
+         "b":  "Nhắc nhở uống thuốc, lịch khám bệnh và tập luyện",
+        "c":   "Phân tích sức khỏe và đề xuất cải thiện thể trạng",
         "titles": "Với Golden Health, bạn có thể chủ động chăm sóc sức khỏe, xây dựng lối sống lành mạnh và phòng ngừa rủi ro bệnh tật."
       }
     ]
